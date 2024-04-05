@@ -1,0 +1,57 @@
+standard_type,final_units,count
+% Control,%,324
+AC50,umol,5870
+AbsAC1000_uM,umol,505
+AbsAC35,umol,443
+Activity,%,6103
+Activity,N/A,12285
+Activity,log10CFU,954
+Activity,log10CFU/ml,619
+Activity,umol,1073
+DIZ,N/A,1295
+EC50,umol,6766
+ED50,ug.mg-1,1317
+ED50,umol,537
+FC,N/A,2440
+FICI,N/A,819
+GI,%,3898
+GI,N/A,1580
+IC50,N/A,346
+IC50,umol,44707
+IC90,umol,1730
+IZ,N/A,533
+IZ,mm,22577
+Inhibition,%,154239
+Kcat,/s,434
+Kd,umol,810
+Ki,umol,2614
+Km,umol,531
+MBC,umol,4872
+MBC99.9,umol,343
+MBEC,umol,271
+MEC,umol,471
+MIC,-logMIC,1315
+MIC,10'-2 umol/ml,276
+MIC,N/A,1907
+MIC,ug,260
+MIC,umol,176090
+MIC100,umol,619
+MIC50,umol,3259
+MIC80,umol,325
+MIC90,umol,9305
+MIC95,umol,426
+MIC99,umol,2758
+MIC=>80,umol,253
+MIC=>90,umol,977
+MIC>90,umol,434
+MIC>99,umol,514
+PD50,ug.mg-1,287
+Percent Effect,%,500337
+Potency,umol,290147
+Ratio,N/A,3919
+Ratio EC50,N/A,334
+Ratio IC50,N/A,1589
+Relative activity,N/A,491
+Survival,%,341
+TIME,hr,292
+XC50,umol,355

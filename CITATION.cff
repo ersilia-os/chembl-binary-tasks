@@ -1,0 +1,26 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ChEMBL Binary Tasks
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Marcos
+    family-names: de la Torre
+    email: marcostorrework@gmail.com
+    affiliation: Ersilia Open Source Initiative
+  - given-names: Gemma
+    family-names: Turon
+    email: gemma@ersilia.io
+    affiliation: Ersilia Open Source Initiative
+    orcid: 'https://orcid.org/0000-0001-6798-0275'
+  - given-names: Miquel
+    family-names: Duran-Frigola
+    email: miquel@ersilia.io
+    affiliation: Ersilia Open Source Initiative
+    orcid: 'https://orcid.org/0000-0002-9906-6936'
+repository-code: 'https://github.com/ersilia-os/chembl-binary-tasks/'
+license: GPL-3.0+

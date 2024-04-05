@@ -1,0 +1,57 @@
+standard_type,final_units,count,use,comments,active_direction,cut-off
+% Control,%,324,0,,,
+AC50,umol,5870,1,,-1,expert
+AbsAC1000_uM,umol,505,0,Unknown specific assay,,
+AbsAC35,umol,443,0,,,
+Activity,%,6103,1,,1,expert
+Activity,N/A,12285,0,No units specified,,
+Activity,log10CFU,954,1,,-1,percentile
+Activity,log10CFU/ml,619,1,,-1,percentile
+Activity,umol,1073,0,,,
+DIZ,N/A,1295,0,Assay not described,,
+EC50,umol,6766,1,,-1,expert
+ED50,ug.mg-1,1317,1,,-1,percentile
+ED50,umol,537,1,,-1,expert
+FC,N/A,2440,0,Assay not described,,
+FICI,N/A,819,0,Assay not described,,
+GI,%,3898,1,Growth Inhibition,1,expert
+GI,N/A,1580,0,No units specified,,
+IC50,N/A,346,0,No units specified,,
+IC50,umol,44707,1,,-1,expert
+IC90,umol,1730,1,,-1,expert
+IZ,N/A,533,0,No units specified,,
+IZ,mm,22577,1,,1,percentile
+Inhibition,%,154239,1,,1,expert
+Kcat,/s,434,0,Assay not described,,
+Kd,umol,810,0,"Dissociation constant, not relevant for antimicrobial activity",,
+Ki,umol,2614,1,,-1,percentile
+Km,umol,531,0,Direction not clear for Michaelis constant,,
+MBC,umol,4872,1,,-1,expert
+MBC99.9,umol,343,1,,-1,expert
+MBEC,umol,271,1,,-1,expert
+MEC,umol,471,1,,-1,expert
+MIC,-logMIC,1315,0,No units specified,,
+MIC,10'-2 umol/ml,276,0,Units not normalized,,
+MIC,N/A,1907,0,No units specified,,
+MIC,ug,260,0,No units specified,,
+MIC,umol,176090,1,,-1,expert
+MIC100,umol,619,1,,-1,expert
+MIC50,umol,3259,1,,-1,expert
+MIC80,umol,325,1,,-1,expert
+MIC90,umol,9305,1,,-1,expert
+MIC95,umol,426,1,,-1,expert
+MIC99,umol,2758,1,,-1,expert
+MIC=>80,umol,253,1,,-1,expert
+MIC=>90,umol,977,1,,-1,expert
+MIC>90,umol,434,1,,-1,expert
+MIC>99,umol,514,1,,-1,expert
+PD50,ug.mg-1,287,0,"Protective Dose; minority assay, not considered",,
+Percent Effect,%,500337,1,,1,percentile
+Potency,umol,290147,1,,-1,percentile
+Ratio,N/A,3919,0,,,
+Ratio EC50,N/A,334,0,,,
+Ratio IC50,N/A,1589,0,,,
+Relative activity,N/A,491,0,,,
+Survival,%,341,0,,,
+TIME,hr,292,0,,,
+XC50,umol,355,0,,,

@@ -1,0 +1,227 @@
+units,Unit String Tested,Validation Result,val_unit,final_unit,transformer,Notes
+pM mg-1,pM mg-1,pM mg-1 is not a valid UCUM unit.,pmol.mg-1,umol.mg-1,standard_value/1000000,pM mg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10^-8No_unit,10^-8No_unit,10^-8No_unit is not a valid UCUM unit.,10^-8No_unit,,,10^-8No_unit is not a valid UCUM code.  No alternatives were found.
+10'4log10CFU/ml,10'4log10CFU/ml,10'4log10CFU/ml is not a valid UCUM unit.,10^4log10[CFU].ml-1,,,10'4log10CFU is not a valid UCUM code.  No alternatives were found.
+10^-5No_unit,10^-5No_unit,10^-5No_unit is not a valid UCUM unit.,10^-5No_unit,,,10^-5No_unit is not a valid UCUM code.  No alternatives were found.
+hr,hr,hr is not a valid UCUM unit.,hour,,,"hr is not a valid UCUM code.  We found possible units that might be what was meant:
+/h, per hour, "
+mm/mg,mm/mg,mm/mg is a valid UCUM unit.,mm.mg-1,,,
+10^2/ml,10^2/ml,10^2/ml is a valid UCUM unit.,10^2/ml,,,
+ug/disk,ug/disk,ug/disk is not a valid UCUM unit.,ug.disk-1,,,disk is not a valid UCUM code.  No alternatives were found.
+uL/ml,uL/ml,uL/ml is a valid UCUM unit.,uL.ml-1,,,
+10'7/s/M,10'7/s/M,10'7/s/M is not a valid UCUM unit.,10^4.s-1.M-1,,,10'7 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+um3/um2,um3/um2,um3/um2 is a valid UCUM unit.,um3/um2,,,
+kJ/mol,kJ/mol,kJ/mol is a valid UCUM unit.,kJ.mol-1,,,
+%,%,% is a valid UCUM unit.,%,,,
+10'5/s,10'5/s,10'5/s is not a valid UCUM unit.,10^5.s-1,,,10'5 is not a valid UCUM code.  No alternatives were found.
+10'-9No_unit,10'-9No_unit,10'-9No_unit is not a valid UCUM unit.,10^-5No_unit,,,10'-9No_unit is not a valid UCUM code.  No alternatives were found.
+nmol/min/mg,nmol/min/mg,nmol/min/mg is a valid UCUM unit.,nmol/min/mg,,,
+ug mg-1,ug mg-1,ug mg-1 is not a valid UCUM unit.,ug.mg-1,ug.mg-1,standard_value,ug mg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+log10CFU/ml,log10CFU/ml,log10CFU/ml is not a valid UCUM unit.,Log10CFU.ml-1,,,log10CFU is not a valid UCUM code.  No alternatives were found.
+mm3,mm3,mm3 is a valid UCUM unit.,mm3,,,
+ug ml-1,ug ml-1,ug ml-1 is not a valid UCUM unit.,ug.ml-1,umol,standard_value/(molecular_weight/1000),ug ml-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+nmol/min,nmol/min,nmol/min is a valid UCUM unit.,nmol.min-1,,,
+deltalog10CFU,deltalog10CFU,deltalog10CFU is not a valid UCUM unit.,deltalog10[CFU],,,deltalog10CFU is not a valid UCUM code.  No alternatives were found.
+ppm,ppm,ppm is not a valid UCUM unit.,[ppm],,,"ppm is not a valid unit expression, but [ppm] is.
+Did you mean [ppm] (parts per million)?"
+10'2CFU/ml,10'2CFU/ml,10'2CFU/ml is not a valid UCUM unit.,10^2CFU.ml-1,,,10'2CFU is not a valid UCUM code.  No alternatives were found.
+10'-3umol/min,10'-3umol/min,10'-3umol/min is not a valid UCUM unit.,10^-3umol.min-1,,,10'-3umol is not a valid UCUM code.  No alternatives were found.
+/s,/s,/s is a valid UCUM unit.,/s,,,
+umol/Kg,umol/Kg,umol/Kg is not a valid UCUM unit.,umol.kg-1,umol.mg-1,standard_value/1000000,Kg is not a valid UCUM code.  No alternatives were found.
+mV,mV,mV is a valid UCUM unit.,mV,,,
+nmol/mg,nmol/mg,nmol/mg is a valid UCUM unit.,nmol.mg-1,umol.mg-1,standard_value/1000,
+10'3/ml,10'3/ml,10'3/ml is not a valid UCUM unit.,10^-3.ml-1,,,10'3 is not a valid UCUM code.  No alternatives were found.
+10'-2mmol/ml,10'-2mmol/ml,10'-2mmol/ml is not a valid UCUM unit.,10^-2mmol.ml-1,,,10'-2mmol is not a valid UCUM code.  No alternatives were found.
+uM min-1 (ug of protein)-1,uM min-1 (ug of protein)-1,uM min-1 (ug of protein)-1 is not a valid UCUM unit.,umol.min-1.(ug of protein)-1,,,uM min-1 (ug of protein)-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+mg Kg-1,mg Kg-1,mg Kg-1 is not a valid UCUM unit.,mg.kg-1,ug.mg-1,standard_value/1000,mg Kg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+ug,ug,ug is a valid UCUM unit.,ug,,,
+10^-2microM,10^-2microM,10^-2microM is not a valid UCUM unit.,10^-2umol,,,10^-2microM is not a valid UCUM code.  No alternatives were found.
+10'5/M,10'5/M,10'5/M is not a valid UCUM unit.,10^5/mol,,,10'5 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+min-1,min-1,min-1 is a valid UCUM unit.,Min-1,,,
+ug/g,ug/g,ug/g is a valid UCUM unit.,ug.g-1,ug.mg-1,standard_value/1000,
+nM,nM,nM is not a valid UCUM unit.,nmol,umol,standard_value/1000,nM is not a valid UCUM code.  No alternatives were found.
+M-1,M-1,M-1 is not a valid UCUM unit.,Mol-1,,,M-1 is not a valid UCUM code.  No alternatives were found.
+radii mm-1,radii mm-1,radii mm-1 is not a valid UCUM unit.,radii.mm-1,,,radii mm-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+RLU,RLU,RLU is not a valid UCUM unit.,RLU,,,RLU is not a valid UCUM code.  No alternatives were found.
+uM min-1 (mg of protein)-1,uM min-1 (mg of protein)-1,uM min-1 (mg of protein)-1 is not a valid UCUM unit.,umol.min-1.(mg of protein)-1,,,uM min-1 (mg of protein)-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+ug l-1,ug l-1,ug l-1 is not a valid UCUM unit.,ug.l-1,umol,(standard_value/1000)/(molecular_weight/1000),ug l-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'-3uM/ml,10'-3uM/ml,10'-3uM/ml is not a valid UCUM unit.,10^-3uM/ml,,,10'-3uM is not a valid UCUM code.  No alternatives were found.
+/M/s,/M/s,/M/s is not a valid UCUM unit.,/M/s,,,M is not a valid UCUM code.  No alternatives were found.
+10'2/M/s,10'2/M/s,10'2/M/s is not a valid UCUM unit.,10^2/M/s,,,10'2 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+mm,mm,mm is a valid UCUM unit.,mm,,,
+/s/microM,/s/microM,/s/microM is not a valid UCUM unit.,/s/umol,,,microM is not a valid UCUM code.  No alternatives were found.
+10'-7 ug/ml,10'-7 ug/ml,10'-7 ug/ml is not a valid UCUM unit.,10^-7 ug.ml-1,,,10'-7 ug/ml is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'-5/s,10'-5/s,10'-5/s is not a valid UCUM unit.,10^-5/s,,,10'-5 is not a valid UCUM code.  No alternatives were found.
+pmol,pmol,pmol is a valid UCUM unit.,pmol,umol,standard_value/1000000,
+ng/mg,ng/mg,ng/mg is a valid UCUM unit.,ng.mg-1,ug.mg-1,standard_value/1000,
+10'8CFU/ml,10'8CFU/ml,10'8CFU/ml is not a valid UCUM unit.,10'8[CFU].ml-1,,,10'8CFU is not a valid UCUM code.  No alternatives were found.
+molar ratio,molar ratio,molar ratio is not a valid UCUM unit.,molar ratio,,,molar ratio is not a valid unit.  Blank spaces are not allowed in unit expressions.
+Da,Da,Da is not a valid UCUM unit.,Da,,,"Da is not a valid UCUM code.  We found possible units that might be what was meant:
+u, unified atomic mass unit, the mass of 1/12 of an unbound Carbon-12 atom nuclide equal to 1.6606x10^-27 kg 
+"
+/s/M,/s/M,/s/M is not a valid UCUM unit.,/s/M,,,M is not a valid UCUM code.  No alternatives were found.
+ug disk-1,ug disk-1,ug disk-1 is not a valid UCUM unit.,ug.disk-1,,,ug disk-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'7CFU,10'7CFU,10'7CFU is not a valid UCUM unit.,10^7[CFU],,,10'7CFU is not a valid UCUM code.  No alternatives were found.
+log10CFU/g,log10CFU/g,log10CFU/g is not a valid UCUM unit.,log10[CFU].g-1,,,log10CFU is not a valid UCUM code.  No alternatives were found.
+10'-3 log10CFU/ml/hr,10'-3 log10CFU/ml/hr,10'-3 log10CFU/ml/hr is not a valid UCUM unit.,10^-3 log10CFU/ml/hr,,,10'-3 log10CFU/ml/hr is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'6CFU/ml,10'6CFU/ml,10'6CFU/ml is not a valid UCUM unit.,10^6[CFU].ml-1,,,10'6CFU is not a valid UCUM code.  No alternatives were found.
+10'8CFU,10'8CFU,10'8CFU is not a valid UCUM unit.,10^8[CFU],,,10'8CFU is not a valid UCUM code.  No alternatives were found.
+K,K,K is a valid UCUM unit.,K,,,
+uM,uM,uM is not a valid UCUM unit.,umol,umol,standard_value,uM is not a valid UCUM code.  No alternatives were found.
+day,day,day is not a valid UCUM unit.,d,,,The UCUM code for day is d. Did you mean d?
+um,um,um is a valid UCUM unit.,um,mm,standard_value/1000,
+mg.min/L,mg.min/L,mg.min/L is a valid UCUM unit.,mg.min.L-1,,,
+degrees C,degrees C,degrees C is not a valid UCUM unit.,Cel,,,degrees C is not a valid unit.  Blank spaces are not allowed in unit expressions.
+millimeter/mg/ml,millimeter/mg/ml,millimeter/mg/ml is not a valid UCUM unit.,mm.mg-1.ml-1,,,The UCUM code for millimeter is mm.Did you mean mm?
+microg,microg,microg is not a valid UCUM unit.,ug,,,microg is not a valid UCUM code.  No alternatives were found.
+10'-7No_unit,10'-7No_unit,10'-7No_unit is not a valid UCUM unit.,10^-7No_unit,,,10'-7No_unit is not a valid UCUM code.  No alternatives were found.
+mm2,mm2,mm2 is a valid UCUM unit.,mm2,,,
+N/total,N/total,N/total is not a valid UCUM unit.,N/total,,,total is not a valid UCUM code.  No alternatives were found.
+cps ,cps,cps is not a valid UCUM unit.,cps,,,cps is not a valid UCUM code.  
+10'-2microM,10'-2microM,10'-2microM is not a valid UCUM unit.,10^-2umol,,,10'-2microM is not a valid UCUM code.  No alternatives were found.
+M-1 s-1,M-1 s-1,M-1 s-1 is not a valid UCUM unit.,M-1 s-1,,,M-1 s-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+/s/mM,/s/mM,/s/mM is not a valid UCUM unit.,/s/mM,,,mM is not a valid UCUM code.  No alternatives were found.
+mg/L,mg/L,mg/L is a valid UCUM unit.,mg.L-1,umol,standard_value/(molecular_weight/1000),
+ng.hr.mL-1,ng.hr.mL-1,ng.hr.mL-1 is not a valid UCUM unit.,ng.hr.mL-1,,,hr is not a valid UCUM code. 
+10^-2/s,10^-2/s,10^-2/s is a valid UCUM unit.,10^-2/s,,,
+umol/L,umol/L,umol/L is a valid UCUM unit.,umol/L,,,
+10'4/M,10'4/M,10'4/M is not a valid UCUM unit.,10^4/M,,,10'4 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+10'-6 ug/ml,10'-6 ug/ml,10'-6 ug/ml is not a valid UCUM unit.,10^-6 ug/ml,,,10'-6 ug/ml is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'4/s/M,10'4/s/M,10'4/s/M is not a valid UCUM unit.,10^4/s/M,,,10'4 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+log10CFU/ml.hr,log10CFU/ml.hr,log10CFU/ml.hr is not a valid UCUM unit.,log10CFU/ml.hr,,,hr is not a valid UCUM code
+/min,/min,/min is a valid UCUM unit.,/min,,,
+10'4/ml,10'4/ml,10'4/ml is not a valid UCUM unit.,10'4/ml,,,10'4 is not a valid UCUM code.  No alternatives were found.
+10^2CFU,10^2CFU,10^2CFU is not a valid UCUM unit.,10^2[CFU],,,10^2CFU is not a valid UCUM code.  No alternatives were found.
+microg/cm3,microg/cm3,microg/cm3 is not a valid UCUM unit.,microg/cm3,,,microg is not a valid UCUM code.  No alternatives were found.
+10'5/ml,10'5/ml,10'5/ml is not a valid UCUM unit.,10^5/ml,,,10'5 is not a valid UCUM code.  No alternatives were found.
+,, is not a valid UCUM unit.,,,,No unit string specified.
+nmol/ml,nmol/ml,nmol/ml is a valid UCUM unit.,nmol.ml-1,,,
+10^2umol/ml,10^2umol/ml,10^2umol/ml is not a valid UCUM unit.,10^2umol/ml,,,10^2umol is not a valid UCUM code.  No alternatives were found.
+microM,microM,microM is not a valid UCUM unit.,umol,umol,standard_value,microM is not a valid UCUM code.  No alternatives were found.
+CFU/g,CFU/g,CFU/g is not a valid UCUM unit.,[CFU]/g,,,"CFU is not a valid unit expression, but [CFU] is. Did you mean [CFU] (colony forming units)?"
+mM,mM,mM is not a valid UCUM unit.,mmol,umol,standard_value*1000,mM is not a valid UCUM code.  No alternatives were found.
+10^5/ml,10^5/ml,10^5/ml is a valid UCUM unit.,10^5/ml,,,
+10'-8 ug/ml,10'-8 ug/ml,10'-8 ug/ml is not a valid UCUM unit.,10^-8 ug/ml,,,10'-8 ug/ml is not a valid unit.  Blank spaces are not allowed in unit expressions.
+deltalog10CFU/ml,deltalog10CFU/ml,deltalog10CFU/ml is not a valid UCUM unit.,deltalog10[CFU]/ml,,,deltalog10CFU is not a valid UCUM code.  No alternatives were found.
+microg/ml,microg/ml,microg/ml is not a valid UCUM unit.,ug.ml-1,umol,standard_value/(molecular_weight/1000),microg is not a valid UCUM code.  No alternatives were found.
+10^9CFU,10^9CFU,10^9CFU is not a valid UCUM unit.,10^9[CFU],,,10^9CFU is not a valid UCUM code.  No alternatives were found.
+cm,cm,cm is a valid UCUM unit.,cm,,,
+umol/min/mg,umol/min/mg,umol/min/mg is a valid UCUM unit.,umol/min/mg,,,
+ug cm**-3,ug cm**-3,ug cm**-3 is not a valid UCUM unit.,ug cm**-3,,,ug cm**-3 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'6/s/M,10'6/s/M,10'6/s/M is not a valid UCUM unit.,10^6/s/M,,,10'6 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+ug m1 l-1,ug m1 l-1,ug m1 l-1 is not a valid UCUM unit.,ug m1 l-1,,,ug m1 l-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+milliequivalent,milliequivalent,milliequivalent is not a valid UCUM unit.,meq,,,"The UCUM code for milliequivalent is meq.
+Did you mean meq?"
+10'-3micromol/ml,10'-3micromol/ml,10'-3micromol/ml is not a valid UCUM unit.,10^-3micromol/ml,,,10'-3micromol is not a valid UCUM code.  No alternatives were found.
+10'3log10CFU/ml,10'3log10CFU/ml,10'3log10CFU/ml is not a valid UCUM unit.,10^3log10CFU/ml,,,10'3log10CFU is not a valid UCUM code.  No alternatives were found.
+10'-2umol,10'-2umol,10'-2umol is not a valid UCUM unit.,10^-2umol,,,10'-2umol is not a valid UCUM code.  No alternatives were found.
+10^3CFU/ml,10^3CFU/ml,10^3CFU/ml is not a valid UCUM unit.,10^3[CFU]/ml,,,10^3CFU is not a valid UCUM code.  No alternatives were found.
+10'5CFU,10'5CFU,10'5CFU is not a valid UCUM unit.,10'5[CFU],,,10'5CFU is not a valid UCUM code.  No alternatives were found.
+10'6/M,10'6/M,10'6/M is not a valid UCUM unit.,10'6/M,,,10'6 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+uM.hr,uM.hr,uM.hr is not a valid UCUM unit.,uM.hr,,,hr is not a valid UCUM code.  
+/uL,/uL,/uL is a valid UCUM unit.,/uL,,,
+mg kg-1 4day-1,mg kg-1 4day-1,mg kg-1 4day-1 is not a valid UCUM unit.,mg kg-1 4day-1,,,mg kg-1 4day-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+a.u.,a.u.,a.u. is not a valid UCUM unit.,a.u.,,,a.u. is not a valid UCUM code. It is terminated with the operator  ->.<- .
+ug/sq.cm,ug/sq.cm,ug/sq.cm is not a valid UCUM unit.,ug/sq.cm,,,sq is not a valid UCUM code.  
+10'5/s/M,10'5/s/M,10'5/s/M is not a valid UCUM unit.,10^5/s/M,,,10'5 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+ug well-1,ug well-1,ug well-1 is not a valid UCUM unit.,ug well-1,,,ug well-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10^4/M/s,10^4/M/s,10^4/M/s is not a valid UCUM unit.,10^4/M/s,,,M is not a valid UCUM code.  No alternatives were found.
+10'-5 ug/ml,10'-5 ug/ml,10'-5 ug/ml is not a valid UCUM unit.,10^-5 ug/ml,,,10'-5 ug/ml is not a valid unit.  Blank spaces are not allowed in unit expressions.
+umol/ml,umol/ml,umol/ml is a valid UCUM unit.,umol.ml-1,,,
+/ml,/ml,/ml is a valid UCUM unit.,/ml,,,
+uM/ml,uM/ml,uM/ml is not a valid UCUM unit.,umol.ml-1,,,uM is not a valid UCUM code.  No alternatives were found.
+10'6/ml,10'6/ml,10'6/ml is not a valid UCUM unit.,10'6/ml,,,10'6 is not a valid UCUM code.  No alternatives were found.
+s-1,s-1,s-1 is a valid UCUM unit.,s-1,,,
+10'-2micromol/ml,10'-2micromol/ml,10'-2micromol/ml is not a valid UCUM unit.,10'-2umol/ml,,,10'-2micromol is not a valid UCUM code.  No alternatives were found.
+umol,umol,umol is a valid UCUM unit.,umol,umol,standard_value,
+deltalog10CFU/ml.hr,deltalog10CFU/ml.hr,deltalog10CFU/ml.hr is not a valid UCUM unit.,Deltalog10[CFU]/ml.hr,,,hr is not a valid UCUM code.  
+fold,fold,fold is not a valid UCUM unit.,fold,,,fold is not a valid UCUM code.  No alternatives were found.
+CFU,CFU,CFU is not a valid UCUM unit.,[CFU],,,"CFU is not a valid unit expression, but [CFU] is.
+Did you mean [CFU] (colony forming units)?"
+ng,ng,ng is a valid UCUM unit.,ng,,,
+10'3/M/s,10'3/M/s,10'3/M/s is not a valid UCUM unit.,10^3/M/s,,,10'3 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+log10RLU,log10RLU,log10RLU is not a valid UCUM unit.,log10RLU,,,log10RLU is not a valid UCUM code.  No alternatives were found.
+uM min-1mg-1,uM min-1mg-1,uM min-1mg-1 is not a valid UCUM unit.,uM min-1mg-1,,,uM min-1mg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'-2 umol/ml,10'-2 umol/ml,10'-2 umol/ml is not a valid UCUM unit.,10^-2 umol/ml,,,10'-2 umol/ml is not a valid unit.  Blank spaces are not allowed in unit expressions.
+mg mouse-1,mg mouse-1,mg mouse-1 is not a valid UCUM unit.,mg.mouse-1,,,mg mouse-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+log10CFU,log10CFU,log10CFU is not a valid UCUM unit.,log10CFU,,,log10CFU is not a valid UCUM code.  No alternatives were found.
+10'9CFU,10'9CFU,10'9CFU is not a valid UCUM unit.,10^9CFU,,,10'9CFU is not a valid UCUM code.  No alternatives were found.
+10'-5M,10'-5M,10'-5M is not a valid UCUM unit.,10^-5M,,,10'-5M is not a valid UCUM code.  No alternatives were found.
+mg kg-1 day-1,mg kg-1 day-1,mg kg-1 day-1 is not a valid UCUM unit.,mg kg-1 day-1,,,mg kg-1 day-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'10CFU,10'10CFU,10'10CFU is not a valid UCUM unit.,10^10[CFU],,,10'10CFU is not a valid UCUM code.  No alternatives were found.
+U,U,U is a valid UCUM unit.,U,,,
+10'3CFU,10'3CFU,10'3CFU is not a valid UCUM unit.,10^3[CFU]/ml,,,10'3CFU is not a valid UCUM code.  No alternatives were found.
+10'-8M,10'-8M,10'-8M is not a valid UCUM unit.,10^-8M,,,10'-8M is not a valid UCUM code.  No alternatives were found.
+10'4CFU/ml,10'4CFU/ml,10'4CFU/ml is not a valid UCUM unit.,10^4[CFU]/ml,,,10'4CFU is not a valid UCUM code.  No alternatives were found.
+U ml-1,U ml-1,U ml-1 is not a valid UCUM unit.,U ml-1,,,U ml-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'6CFU/g,10'6CFU/g,10'6CFU/g is not a valid UCUM unit.,10^6[CFU]/g,,,10'6CFU is not a valid UCUM code.  No alternatives were found.
+10'12L/mol/s,10'12L/mol/s,10'12L/mol/s is not a valid UCUM unit.,10^12L/mol/s,,,10'12L is not a valid UCUM code.  No alternatives were found.
+10^5/M/s,10^5/M/s,10^5/M/s is not a valid UCUM unit.,10^5/M/s,,,M is not a valid UCUM code.  No alternatives were found.
+/hr,/hr,/hr is not a valid UCUM unit.,/hr,,,hr is not a valid UCUM code.  
+/uM/min,/uM/min,/uM/min is not a valid UCUM unit.,/uM/min,,,uM is not a valid UCUM code.  No alternatives were found.
+10'2/ml,10'2/ml,10'2/ml is not a valid UCUM unit.,10^2/ml,,,10'2 is not a valid UCUM code.  No alternatives were found.
+10^4CFU/ml,10^4CFU/ml,10^4CFU/ml is not a valid UCUM unit.,10^4[CFU]/ml,,,10^4CFU is not a valid UCUM code.  No alternatives were found.
+ucm/s,ucm/s,ucm/s is not a valid UCUM unit.,ucm/s,,,ucm is not a valid UCUM code.  No alternatives were found.
+mg 2kg-1,mg 2kg-1,mg 2kg-1 is not a valid UCUM unit.,mg 2kg-1,,,mg 2kg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'6/M/s,10'6/M/s,10'6/M/s is not a valid UCUM unit.,10^6/M/s,,,10'6 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+10'5log10CFU/ml,10'5log10CFU/ml,10'5log10CFU/ml is not a valid UCUM unit.,10^5log10[CFU]/ml,,,10'5log10CFU is not a valid UCUM code.  No alternatives were found.
+10'4/M/s,10'4/M/s,10'4/M/s is not a valid UCUM unit.,10^4/M/s,,,10'4 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+min,min,min is a valid UCUM unit.,min,,,
+10^6/ml,10^6/ml,10^6/ml is a valid UCUM unit.,10^6/ml,,,
+10'2/s.M,10'2/s.M,10'2/s.M is not a valid UCUM unit.,10^2/s.M,,,10'2 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+p.p.m.,p.p.m.,p.p.m. is not a valid UCUM unit.,p.p.m.,,,p.p.m. is not a valid UCUM code. It is terminated with the operator  ->.<- .
+microg.hr/mL,microg.hr/mL,microg.hr/mL is not a valid UCUM unit.,microg.hr/mL,,,hr is not a valid UCUM code. 
+mg,mg,mg is a valid UCUM unit.,mg,,,
+10'7/M/s,10'7/M/s,10'7/M/s is not a valid UCUM unit.,10'7/M/s,,,10'7 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+mg kg-1,mg kg-1,mg kg-1 is not a valid UCUM unit.,mg.kg-1,ug.mg-1,standard_value/1000,mg kg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+%v/v,%v/v,%v/v is not a valid UCUM unit.,%v/v,,,%v is not a valid UCUM code.  No alternatives were found.; v is not a valid UCUM code.  No alternatives were found.
+10'-3/s,10'-3/s,10'-3/s is not a valid UCUM unit.,10^-3/s,,,10'-3 is not a valid UCUM code.  No alternatives were found.
+ml,ml,ml is a valid UCUM unit.,ml,,,
+10'10L/mol/s,10'10L/mol/s,10'10L/mol/s is not a valid UCUM unit.,10'10L/mol/s,,,10'10L is not a valid UCUM code.  No alternatives were found.
+/uM/s,/uM/s,/uM/s is not a valid UCUM unit.,/uM/s,,,uM is not a valid UCUM code.  No alternatives were found.
+10^-3mM,10^-3mM,10^-3mM is not a valid UCUM unit.,10^-3mM,,,10^-3mM is not a valid UCUM code.  No alternatives were found.
+nM/g,nM/g,nM/g is not a valid UCUM unit.,nmol.g-1,umol.mg-1,standard_value/1000000,nM is not a valid UCUM code.  No alternatives were found.
+mmol/min/mg,mmol/min/mg,mmol/min/mg is a valid UCUM unit.,mmol/min/mg,,,
+10^5CFU,10^5CFU,10^5CFU is not a valid UCUM unit.,10^5[CFU],,,10^5CFU is not a valid UCUM code.  No alternatives were found.
+ug.hr/ml,ug.hr/ml,ug.hr/ml is not a valid UCUM unit.,ug.hr/ml,,,hr is not a valid UCUM code. 
+uM ml-1,uM ml-1,uM ml-1 is not a valid UCUM unit.,uM ml-1,,,uM ml-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+nmol,nmol,nmol is a valid UCUM unit.,nmol,umol,standard_value/1000,
+10^3/ml,10^3/ml,10^3/ml is a valid UCUM unit.,10^3/ml,,,
+10'3CFU/ml,10'3CFU/ml,10'3CFU/ml is not a valid UCUM unit.,10'3[CFU]/ml,,,10'3CFU is not a valid UCUM code.  No alternatives were found.
+/mM/s,/mM/s,/mM/s is not a valid UCUM unit.,/mM/s,,,mM is not a valid UCUM code.  No alternatives were found.
+log CFU,log CFU,log CFU is not a valid UCUM unit.,log CFU,,,log CFU is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'-6No_unit,10'-6No_unit,10'-6No_unit is not a valid UCUM unit.,10^-6No_unit,,,10'-6No_unit is not a valid UCUM code.  No alternatives were found.
+mg/ml,mg/ml,mg/ml is a valid UCUM unit.,mg/ml,,,
+ug.mL-1,ug.mL-1,ug.mL-1 is a valid UCUM unit.,ug.ml-1,umol,standard_value/(molecular_weight/1000),
+10^5/M,10^5/M,10^5/M is not a valid UCUM unit.,10^5/M,,,M is not a valid UCUM code.  No alternatives were found.
+10'5/M/s,10'5/M/s,10'5/M/s is not a valid UCUM unit.,10^5/M/s,,,10'5 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+OD/mm2,OD/mm2,OD/mm2 is not a valid UCUM unit.,OD/mm2,,,OD is not a valid UCUM code.  No alternatives were found.
+CFU/ml,CFU/ml,CFU/ml is not a valid UCUM unit.,[CFU]/ml,,,"CFU is not a valid unit expression, but [CFU] is.
+Did you mean [CFU] (colony forming units)?"
+mg.kg-1,mg.kg-1,mg.kg-1 is a valid UCUM unit.,mg.kg-1,ug.mg-1,standard_value/1000,
+ug kg-1,ug kg-1,ug kg-1 is not a valid UCUM unit.,ug.kg-1,ug.mg-1,standard_value/1000000,ug kg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'2 uM/s,10'2 uM/s,10'2 uM/s is not a valid UCUM unit.,10^2 uM/s,,,10'2 uM/s is not a valid unit.  Blank spaces are not allowed in unit expressions.
+mM l-1,mM l-1,mM l-1 is not a valid UCUM unit.,mM l-1,,,mM l-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+1/S,1/S,1/S is a valid UCUM unit.,1/S,,,
+U/mg,U/mg,U/mg is a valid UCUM unit.,U/mg,,,
+10'3/s/M,10'3/s/M,10'3/s/M is not a valid UCUM unit.,10^3/s/M,,,10'3 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+cm2,cm2,cm2 is a valid UCUM unit.,cm2,,,
+ug cm**-2,ug cm**-2,ug cm**-2 is not a valid UCUM unit.,ug cm**-2,,,ug cm**-2 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+ng ml-1,ng ml-1,ng ml-1 is not a valid UCUM unit.,ng.ml-1,umol,(standard_value/1000)/(molecular_weight/1000),ng ml-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10'7/ml,10'7/ml,10'7/ml is not a valid UCUM unit.,10^7/ml,,,10'7 is not a valid UCUM code.  No alternatives were found.
+ng/ml,ng/ml,ng/ml is a valid UCUM unit.,ng.ml-1,umol,(standard_value/1000)/(molecular_weight/1000),
+10'7/g,10'7/g,10'7/g is not a valid UCUM unit.,10^7/g,,,10'7 is not a valid UCUM code.  No alternatives were found.
+mmol/ml,mmol/ml,mmol/ml is a valid UCUM unit.,mmol/ml,,,
+10'-4M,10'-4M,10'-4M is not a valid UCUM unit.,10^-4M,,,10'-4M is not a valid UCUM code.  No alternatives were found.
+10^-7No_unit,10^-7No_unit,10^-7No_unit is not a valid UCUM unit.,10^-7No_unit,,,10^-7No_unit is not a valid UCUM code.  No alternatives were found.
+10'2/s/M,10'2/s/M,10'2/s/M is not a valid UCUM unit.,10^2/s/M,,,10'2 is not a valid UCUM code.  No alternatives were found.; M is not a valid UCUM code.  No alternatives were found.
+uM well-1,uM well-1,uM well-1 is not a valid UCUM unit.,uM well-1,,,uM well-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+molar excess,molar excess,molar excess is not a valid UCUM unit.,molar excess,,,molar excess is not a valid unit.  Blank spaces are not allowed in unit expressions.
+10^4/ml,10^4/ml,10^4/ml is a valid UCUM unit.,10^4/ml,,,
+10'-8No_unit,10'-8No_unit,10'-8No_unit is not a valid UCUM unit.,10'-8No_unit,,,10'-8No_unit is not a valid UCUM code.  No alternatives were found.
+nm,nm,nm is a valid UCUM unit.,nm,mm,standard_value/1000000,
+mU mg-1,mU mg-1,mU mg-1 is not a valid UCUM unit.,mU mg-1,,,mU mg-1 is not a valid unit.  Blank spaces are not allowed in unit expressions.
+uM.hr/day,uM.hr/day,uM.hr/day is not a valid UCUM unit.,uM.hr/day,,,hr is not a valid UCUM code.  
+10^-6 uM,10^-6 uM,10^-6 uM is not a valid UCUM unit.,10^-6 uM,,,10^-6 uM is not a valid unit.  Blank spaces are not allowed in unit expressions.
+mg/kg/day,mg/kg/day,mg/kg/day is not a valid UCUM unit.,mg/kg/day,,,"The UCUM code for day is d.
+Did you mean d?"
