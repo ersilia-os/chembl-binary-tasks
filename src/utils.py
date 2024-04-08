@@ -233,12 +233,12 @@ class Binarizer():
         if np.isnan(row.standard_value):
             return row.comment_active
         elif row.active_direction == 1:  # Higher value is more active
-            if row.standard_value >= cut:
+            if row.final_value >= cut:
                 return 1
             else:
                 return 0
         elif row.active_direction == -1:  # Lower value is more active
-            if row.standard_value <= cut:
+            if row.final_value <= cut:
                 return 1
             else:
                 return 0

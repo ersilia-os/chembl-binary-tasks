@@ -92,11 +92,3 @@ for st_type in ST_TYPES:
         hc.to_csv(os.path.join(DATAPATH, pathogen, "{}_{}_hc.csv".format(pathogen, st_type)), index=False)
     except:
         print("No High Cut data for {}, {}, assay types".format(pathogen, st_type))
-
-"""
-s = Splitter(pathogen)
-s.create_summary()
-s.create_directoy_structure()
-s.create_input_files()
-s.train_test_split()
-"""
