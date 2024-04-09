@@ -41,9 +41,10 @@ class RawCleaner():
         rows_before_filter = len(df)
         df = df[~((df.standard_value.isnull()) & (df.comment_active.isnull()) )]
         rows_after_filter = len(df)
+        no_activity_info = rows_before_filter-rows_after_filter
         print('\nRemoving rows where standard_value is null and activity_comment does not inform on activity.')
-        print(f'Removed {rows_before_filter-rows_after_filter} rows. Remaining {rows_after_filter} rows.')
-        return df
+        print(f'Removed {no_activity_info } rows. Remaining {rows_after_filter} rows.')
+        return df, no_activity_info 
     
     def drop_unwanted_cols(self, df):
         cols_to_drop = ['doc_id', 'activity_id', 'assay_type',
@@ -62,10 +63,14 @@ class RawCleaner():
         return Descriptors.MolWt(mol)
 
     def add_mol_weight(self, df):
+        print("MOL WEIGHT")
         df["molecular_weight"] = df["canonical_smiles"].apply(self._mol_weight)
         #if molweight cannot be calculated, drop row
+        smi_not_processed = len(df[df["molecular_weight"].isna()])
+        print(len(df), smi_not_processed)
         df = df[~df["molecular_weight"].isna()]
-        return df
+        print(len(df))
+        return df, smi_not_processed
     
     def activity_cleanup(self, df):
         for i,r in df.iterrows():
@@ -92,12 +97,12 @@ class RawCleaner():
     
     def run(self, df):
         df = self.get_comment(df)
-        df = self.eliminate_rows(df)
+        df, no_activity_info = self.eliminate_rows(df)
         df = self.drop_unwanted_cols(df)
-        df = self.add_mol_weight(df)
+        df, smi_not_processed = self.add_mol_weight(df)
         df = self.activity_cleanup(df)
         df = self.add_ucum_units(df)
-        return df
+        return df, no_activity_info, smi_not_processed
 
 class UnitStandardiser():
     #the units file has been processed in UCUM. Selected units will be converted to standard:
@@ -218,16 +223,16 @@ class Binarizer():
               on=['standard_type', 'final_units'],
               indicator='is_in_config_table')
         self._warning_for_missing_config_entries(df1)
-        print(df1.columns)
         return df1
     
     def eliminate_no_direction(self, df):
         rows_before_filter = len(df)
         df = df[df.active_direction.notnull()]
         rows_after_filter = len(df)
+        no_config_info = rows_before_filter-rows_after_filter
         print('\nRemoving rows where the combination of standard_type and standard_units is not in the config table.')
-        print(f'Removed {rows_before_filter-rows_after_filter} rows. Remaining {rows_after_filter} rows.')
-        return df
+        print(f'Removed {no_config_info} rows. Remaining {rows_after_filter} rows.')
+        return df, no_config_info
 
     def _calculate_active(self, row, cut):
         if np.isnan(row.standard_value):
@@ -243,8 +248,7 @@ class Binarizer():
             else:
                 return 0
     
-    def calculate_active(self,df):
-        print(df.columns)     
+    def calculate_active(self,df):    
         df['activity_lc'] = df.apply(
                 lambda row: self._calculate_active(row, row.low_cut), 
                 axis=1).astype('float')
@@ -272,7 +276,7 @@ class Binarizer():
     #     * standard_relation may be '<' (it indicates a "small" value)
     # - If active_direction=-1
     #     * standard_relation may be '>' (it indicates a "large" value)
-
+        total_inconsistent = 0
         rows_to_drop = df[(df.comment_active.isnull()) &
         (df.activity_hc==0) & 
         (df.active_direction==1) & 
@@ -280,6 +284,7 @@ class Binarizer():
         ].index
         df.drop(rows_to_drop, inplace=True)
         print(f'Removed {len(rows_to_drop)} cases with active direction +, relation ">", but labeled as not active')
+        total_inconsistent = total_inconsistent+len(rows_to_drop)
 
         rows_to_drop = df[(df.comment_active.isnull()) &
         (df.activity_hc==0) & 
@@ -288,6 +293,7 @@ class Binarizer():
         ].index
         df.drop(rows_to_drop, inplace=True)
         print(f'Removed {len(rows_to_drop)} cases with active direction -, relation "<", but labeled as not active')
+        total_inconsistent = total_inconsistent+len(rows_to_drop)
 
         rows_to_drop = df[(df.comment_active.isnull()) &
         (df.activity_hc==1) & 
@@ -296,6 +302,7 @@ class Binarizer():
         ].index
         df.drop(rows_to_drop, inplace=True)
         print(f'Removed {len(rows_to_drop)} cases with active direction +, relation "<", but labeled as active')
+        total_inconsistent = total_inconsistent+len(rows_to_drop)
 
         rows_to_drop = df[(df.comment_active.isnull()) &
         (df.activity_hc==1) & 
@@ -304,15 +311,16 @@ class Binarizer():
         ].index
         df.drop(rows_to_drop, inplace=True)
         print(f'Removed {len(rows_to_drop)} cases with active direction -, relation ">", but labeled as active')
+        total_inconsistent = total_inconsistent+len(rows_to_drop)
 
         print('Cases remaining after filter:', len(df))
-        return df
-    
+        
+        return df, total_inconsistent
+
+
     def run(self, df):
         df = self.add_cutoffs(df)
-        print(df.head())
-        df = self.eliminate_no_direction(df)
-        print(df.head())
+        df, no_config_info = self.eliminate_no_direction(df)
         df = self.calculate_active(df)
-        df = self.remove_inconsistencies(df)
-        return df
+        df, total_inconsistent = self.remove_inconsistencies(df)
+        return df, no_config_info, total_inconsistent

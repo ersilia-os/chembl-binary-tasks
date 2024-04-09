@@ -36,7 +36,7 @@ class TypeDatasets():
             df_['activity'] = df_['activity'].apply(lambda x: 1 if x>=0.5 else 0)
             count_pos = len(df_[df_.activity==1])
             count_neg = len(df_[df_.activity==0])        
-            print(count_pos, count_neg)
+            print("Total Positives", count_pos, "Total Negatives",count_neg)
             # If there are fewer negatives than positives, fill up negatives with a random sample
             if count_neg < count_pos:
                 neg_df = self._sample_negatives(
@@ -44,13 +44,13 @@ class TypeDatasets():
                         list_positive_molecules=list(df_[df_.activity==1].compound_chembl_id))
                 neg_df.rename(columns={'chembl_id':'compound_chembl_id'}, inplace=True)
                 neg_df['activity'] = 0
+                print("Added Random Negatives: ", len(neg_df))
                 df_ = pd.concat([df_, neg_df], ignore_index=True)
             # Provide dataset only if minimum number of positive cases achieved.
             if count_pos >= MIN_COUNT_POSITIVE_CASES:
                 df_.rename(columns={'canonical_smiles':'smiles'}, inplace=True)
                 datasets[tv] = df_
             else:
-                print("here")
                 datasets[tv] = np.nan
         return datasets.values()
 
@@ -64,7 +64,6 @@ class OrgDatasets(TypeDatasets):
 
     def top_assay_selector(self, df):
         assay_counts = df.assay_id.value_counts()[:TOP_ASSAYS]
-        print(assay_counts)
         assay_counts = assay_counts[assay_counts >= MIN_SIZE_ASSAY_TASK]
         list_top_assays = list(assay_counts.index)
         print('Selected top assays:', list_top_assays)
@@ -77,7 +76,6 @@ class OrgDatasets(TypeDatasets):
     
     def run_top_org(self, df):
         df = df[df.target_type == 'ORGANISM']
-        print("HERE", len(df))
         top_assays = self.top_assay_selector(df)
         assays_data = {}
         for a in top_assays:
