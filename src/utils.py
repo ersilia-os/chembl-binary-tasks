@@ -89,104 +89,66 @@ class RawCleaner():
                 continue
         return df
     
-    def add_ucum_units(self, df):
-        units_to_val_units = dict(zip(self.ucum['units'], self.ucum['val_unit']))
-        #df['val_units'] = [units_to_val_units[unit] for unit in df['standard_units']]
-        df['val_units'] = [units_to_val_units.get(unit, unit) for unit in df['standard_units']]
-        return df
-    
     def run(self, df):
         df = self.get_comment(df)
         df, no_activity_info = self.eliminate_rows(df)
         df = self.drop_unwanted_cols(df)
         df, smi_not_processed = self.add_mol_weight(df)
         df = self.activity_cleanup(df)
-        df = self.add_ucum_units(df)
         return df, no_activity_info, smi_not_processed
 
 class UnitStandardiser():
     #the units file has been processed in UCUM. Selected units will be converted to standard:
-    #Molar: umol
-    #weight/volume: ug.ml-1 to uM
-    #weight/weight: ug.mg-1
-    #molar/weight: umol/mg
 
     def __init__(self):
         self.unit_col = "standard_units"
         self.value_col = "standard_value"
         self.mw_col = "molecular_weight"
         self.ucum = UNITS_MASTER
+
+    def add_ucum_units(self, df):
+        unit_cols = ["val_unit", "final_unit", "transformer"]
+        for c in unit_cols:
+            units_to_col_units = dict(zip(self.ucum['units'], self.ucum[c]))
+            df[c] = [units_to_col_units.get(unit, unit) for unit in df['standard_units']]
+        return df
     
-    def _parse_function(self, s):
-        if 'standard_value' not in s:
-            return None
-        if "molecular_weight" in s:
-            p = "lambda x,y: "
-        else:
-            p = "lambda x: "
-        s = s.replace("molecular_weight", "y")
-        s = s.replace("standard_value", "x")
-        s = p + s
-        return eval(s)
-
-    def _umol_converter(self):
-        converter_str = {}
-        converter_frm = {}
-        for i,r in self.ucum.iterrows():
-            if r["final_unit"] == "umol":
-                converter_str[r["units"]] = r["transformer"]
-        for k,v in converter_str.items():
-            f = self._parse_function(v)
-            converter_frm[k]=f
-        return converter_frm
-
-    def _ugmg_converter(self):
-        converter_str = {}
-        converter_frm = {}
-        for i,r in self.ucum.iterrows():
-            if r["final_unit"] == "ug.mg-1":
-                converter_str[r["units"]] = r["transformer"]
-        for k,v in converter_str.items():
-            f = self._parse_function(v)
-            converter_frm[k]=f
-        return converter_frm
-    
-    def _umolmg_converter(self):
-        converter_str = {}
-        converter_frm = {}
-        for i,r in self.ucum.iterrows():
-            if r["final_unit"] == "umol.mg-1":
-                converter_str[r["units"]] = r["transformer"]
-        for k,v in converter_str.items():
-            f = self._parse_function(v)
-            converter_frm[k]=f
-        return converter_frm
-
-    def standardise(self,df):
-        final_units = []
-        final_value = []
-        umol_converter = self._umol_converter()
-        ugmg_converter = self._ugmg_converter()
-        umolmg_converter = self._umolmg_converter()
-
-        for i,r in df.iterrows():
-            if r[self.unit_col] in umol_converter.keys():
-                final_units += ["umol"]
-                if r["val_units"] in ["umol", "nmol", "pmol", "mmol", "mol"]:
-                    final_value += [umol_converter[r[self.unit_col]](r[self.value_col])] 
+    def transformer(self, df):
+        unique_transformers = df["transformer"].dropna().unique()  # Drop NaN values and get unique transformers
+        unique_transformers = unique_transformers[unique_transformers != 'N/A'] 
+        transformer_mapping = {}
+        for t in unique_transformers:
+            print(t)
+            try:
+                if "molecular_weight" in t:
+                    transformer_expr = t.replace('standard_value', 'row["standard_value"]').replace('molecular_weight', 'row["molecular_weight"]')
+                    function_expr = f"lambda row: {transformer_expr}"
+                    transformer_mapping[t] = eval(function_expr)
                 else:
-                    final_value += [umol_converter[r[self.unit_col]](r[self.value_col], r[self.mw_col])]
-            elif r[self.unit_col] in ugmg_converter.keys():
-                final_units += ["ug.mg-1"]
-                final_value += [ugmg_converter[r[self.unit_col]](r[self.value_col])]
-            elif r[self.unit_col] in umolmg_converter.keys():
-                final_units += ["umol.mg-1"]
-                final_value += [umolmg_converter[r[self.unit_col]](r[self.value_col])]
+                    transformer_expr = t.replace('standard_value', 'row["standard_value"]')
+                    function_expr = f"lambda row: {transformer_expr}"
+                    transformer_mapping[t] = eval(function_expr)
+            except:
+                print(f"Value {t} not in the UCUM file")
+        # Apply the appropriate function to each row based on the value in the 'transformer' column
+        def apply_transformer(row):
+            transformer_func = transformer_mapping.get(row['transformer'])
+            if transformer_func is not None:
+                result = transformer_func(row)
+                if result is not None:
+                    return f"{result:.3f}"  # Format the result to have at least three digits
+                else:
+                    return None
             else:
-                final_units += [r[self.unit_col]]
-                final_value += [r[self.value_col]]
-        df["final_units"] = final_units
-        df["final_value"] = final_value
+                if f"{row['transformer']}" != 'N/A':
+                    print(f"Warning: Transformer '{row['transformer']}' not found in mapping. Skipping...")
+                return None
+        df['final_value'] = df.apply(apply_transformer, axis=1)
+        return df
+
+    def run(self, df):
+        df = self.add_ucum_units(df)
+        df = self.transformer(df)
         return df
 
 class Binarizer():
@@ -194,7 +156,7 @@ class Binarizer():
         pass
     
     def _load_config_file(self):
-        df = pd.read_csv(os.path.join(CONFIGPATH, "cutoff_config.csv"),
+        df = pd.read_csv(os.path.join(CONFIGPATH, "cutoff_manual.csv"),
                          usecols = ["standard_type", "final_units", "active_direction", 'low_cut', 'high_cut'],
                          keep_default_na = False, na_values=['']
                          )

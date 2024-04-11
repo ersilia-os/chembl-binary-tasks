@@ -1,7 +1,15 @@
 pathogen_code,search_text
+calbicans,Candida Albicans
+campylobacter,Campylobacter
+ecoli,Escherichia Coli
 efaecium,Enterococcus Faecium
-saureus,Staphylococcus Aureus
-kpneumoniae,Klebsiella Pneumoniae
-abaumannii,Acinetobacter Baumannii
-paeruginosa,Pseudomonas Aeruginosa
 enterobacter,Enterobacter
+hpylori,Helicobacter Pylori
+kpneumoniae,Klebsiella Pneumoniae
+mtuberculosis,Mycobacterium Tuberculosis
+ngonorrohoeae,Neisseria Gonorrohoeae
+paeruginosa,Pseudomonas Aeruginosa
+pfalciparum,Plasmodium Falciparum
+saureus,Staphylococcus Aureus
+smansoni,Schistosoma Mansoni
+spneumoniae,Streptococcus Pneumoniae

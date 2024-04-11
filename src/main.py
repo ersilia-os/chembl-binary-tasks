@@ -20,9 +20,10 @@ rc = RawCleaner()
 df, no_activity_info, smi_not_processed = rc.run(df)
 
 us = UnitStandardiser()
-df = us.standardise(df)
+df = us.run(df)
 df.to_csv(os.path.join(DATAPATH, pathogen, "{}_processed.csv".format(pathogen)), index=False)
 
+"""
 bin = Binarizer()
 df, no_config_info, total_inconsistent = bin.run(df)
 df.to_csv(os.path.join(DATAPATH, pathogen, "{}_binary.csv".format(pathogen)), index=False)
@@ -33,7 +34,9 @@ summary_dict = {"Initial dataset":initial_len,
                 "Rows without sufficient activity info": no_activity_info,
                 "Rows with unprocessable SMILES": smi_not_processed,
                 "Rows with activity not in config file": no_config_info,
-                "Rows with inconsistent activity info": total_inconsistent}
+                "Rows with inconsistent activity info": total_inconsistent,
+                "Final total rows": initial_len - (no_activity_info+smi_not_processed+no_config_info+total_inconsistent)
+                }
 summary = pd.DataFrame(summary_dict.items(), columns=["Concept", "Cases"])
 summary.to_csv(os.path.join(DATAPATH, pathogen, "summary.csv"), index=False)
 
@@ -112,3 +115,5 @@ for st_type in ST_TYPES:
         hc.to_csv(os.path.join(DATAPATH, pathogen, "{}_{}_hc.csv".format(pathogen, st_type)), index=False)
     except:
         print("No High Cut data for {}, {}, assay types".format(pathogen, st_type))
+
+"""
