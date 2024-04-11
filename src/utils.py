@@ -118,7 +118,6 @@ class UnitStandardiser():
         unique_transformers = unique_transformers[unique_transformers != 'N/A'] 
         transformer_mapping = {}
         for t in unique_transformers:
-            print(t)
             try:
                 if "molecular_weight" in t:
                     transformer_expr = t.replace('standard_value', 'row["standard_value"]').replace('molecular_weight', 'row["molecular_weight"]')
@@ -156,48 +155,45 @@ class Binarizer():
         pass
     
     def _load_config_file(self):
-        df = pd.read_csv(os.path.join(CONFIGPATH, "cutoff_manual.csv"),
-                         usecols = ["standard_type", "final_units", "active_direction", 'low_cut', 'high_cut'],
-                         keep_default_na = False, na_values=['']
-                         )
+        df = pd.read_csv(os.path.join(CONFIGPATH, "cutoffs_manual.csv"))
+        df['final_unit'] = df['final_unit'].fillna('N/A')  
+        df = df[df["use"]==1]
         print('\nstandard_type_config shape:', df.shape)
         return df
     
     def _warning_for_missing_config_entries(self, df):
         """Give a warning if missing important (type,units) combination in config table"""
         # Top 10 combinations of (type, units) that appear at least 100 times
-        top_values_type_unit = df[['standard_type', 'final_units']].value_counts()[0:10]
+        top_values_type_unit = df[['standard_type', 'final_unit']].value_counts()[0:10]
         top_values_type_unit = top_values_type_unit[top_values_type_unit>100]
         # Detailed data for those (type, units)
-        df_top = df.merge(top_values_type_unit.to_frame(), left_on=['standard_type', 'final_units'], right_index=True)
+        df_top = df.merge(top_values_type_unit.to_frame(), left_on=['standard_type', 'final_unit'], right_index=True)
         # Combinations not present in config table ()
-        missing_top_type_units = df_top[df_top.is_in_config_table=='left_only']\
-                [['standard_type', 'final_units']].value_counts()
+        missing_top_type_units = df_top[df_top.is_in_cutoff_table=='left_only']\
+                [['standard_type', 'final_unit']].value_counts()
         if len(missing_top_type_units) > 0:
-            print('\n--- WARNING - The following combinations of (standard_type, standard_unit) are'
+            print('\n--- WARNING - The following combinations of (standard_type, final_unit) are'
                 ' often present in the data but do not exist in the configuration table. Please'
                 ' consider updating the configuration table:')
             print(missing_top_type_units)
-
+    
     def add_cutoffs(self, df):
         configfile = self._load_config_file()     
+        configfile = configfile[["standard_type", "final_unit","active_direction", 'low_cut', 'high_cut']]
         df1 = df.merge(configfile, how='left',
-              on=['standard_type', 'final_units'],
-              indicator='is_in_config_table')
+              on=['standard_type', 'final_unit'],
+              indicator='is_in_cutoff_table')
         self._warning_for_missing_config_entries(df1)
-        return df1
-    
-    def eliminate_no_direction(self, df):
-        rows_before_filter = len(df)
-        df = df[df.active_direction.notnull()]
-        rows_after_filter = len(df)
-        no_config_info = rows_before_filter-rows_after_filter
-        print('\nRemoving rows where the combination of standard_type and standard_units is not in the config table.')
-        print(f'Removed {no_config_info} rows. Remaining {rows_after_filter} rows.')
-        return df, no_config_info
+        rows_before_filter = len(df1)
+        df1 = df1[df1["is_in_cutoff_table"]=="both"]
+        rows_after_filter = len(df1)
+        assay_entries_discarded = rows_before_filter-rows_after_filter
+        print('\nRemoving rows where the combination of standard_type and final_unit is not in the cutoff table.')
+        print(f'Removed {assay_entries_discarded} rows. Remaining {rows_after_filter} rows.')
+        return df1, assay_entries_discarded
 
     def _calculate_active(self, row, cut):
-        if np.isnan(row.standard_value):
+        if not pd.isna(row.comment_active): #priority to author comment of Active or Inactive
             return row.comment_active
         elif row.active_direction == 1:  # Higher value is more active
             if row.final_value >= cut:
@@ -206,11 +202,13 @@ class Binarizer():
                 return 0
         elif row.active_direction == -1:  # Lower value is more active
             if row.final_value <= cut:
+
                 return 1
             else:
                 return 0
     
-    def calculate_active(self,df):    
+    def calculate_active(self,df):
+        df["final_value"]=df["final_value"].astype(float)    
         df['activity_lc'] = df.apply(
                 lambda row: self._calculate_active(row, row.low_cut), 
                 axis=1).astype('float')
@@ -281,8 +279,7 @@ class Binarizer():
 
 
     def run(self, df):
-        df = self.add_cutoffs(df)
-        df, no_config_info = self.eliminate_no_direction(df)
+        df, assay_entries_discarded = self.add_cutoffs(df)
         df = self.calculate_active(df)
         df, total_inconsistent = self.remove_inconsistencies(df)
-        return df, no_config_info, total_inconsistent
+        return df, assay_entries_discarded, total_inconsistent

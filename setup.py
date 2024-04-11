@@ -6,7 +6,7 @@ setup(name='chemblbinarytasks',
       long_description=open('README.md').read().strip(),
       author="Ersilia Open Source Initiative",
       author_email="hello@ersilia.io",
-      url='https://github.com/ersilia-os/chembl_ml_tools',
+      url='https://github.com/ersilia-os/chembl-binary-tasks',
       license='GPLv3',
       python_requires='>=3.10',
       install_requires=[

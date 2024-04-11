@@ -62,12 +62,33 @@ This will create folders under the specified `DATAPATH` folder with all the avai
 cd src
 python main.py <pathogen_code>
 ```
+Master files:
+There are three master files in the /pathogen_name folder:
+- pathogen_original.csv: the original file pulled from ChEMBL
+- pathogen_processed.csv: the original file including the columns final_unit, transformer, final_value. The final_value column will contain the end result in the standardised unit as defined in `config/ucum.csv`
+- pathogen_binary.csv: the processed file including the cut-offs for each assay (and unit type). Assay - unit combinations not selected in `config/st_type_summary_manual.csv` are not included here. Two columns are created: activity_lc and activity_hc, corresponding to the binary activity for the row if using the Low cut-off or the High cut-off. If there is a comment from the author (Active, Non Active) this determines the activity both in LC and HC. This file will be processed to create the following:
+
 Outputs:
-- Two file containing all the molecules and its binary classification (regardless of assay or target (whole cell organism or protein)), both using a high confidence threshold (anytype_hc) and low confidence threshold (anytype_lc) for the binarization of activities
-- Two files containing all the molecules and its binary classification for whole cell assays, both using a high confidence threshold (anyorg_hc) and low confidence threshold (anyorg_lc) for the binarization of activities
-- Two files containing all the molecules and its binary classification for protein assays, both using a high confidence threshold (anyprot_hc) and low confidence threshold (anyprot_lc) for the binarization of activities
-- Files containing the top assays as determined by the thresholds in default.py (for example, an IC50 assay with over 250 molecules on it). Those are identified by <assay_name>_<prot/org>_<hc/lc>.csv
-- Files containing all results for selected assays (specified in ST_TYPEs in default.py). Currently those include MIC, IC50, IZ, Activity, Inhibition. They all relate to whole cell assays.
+- Two file containing all the molecules and its binary classification (regardless of assay or target (whole cell organism or protein)), both using a high confidence threshold (pathogen_all_hc) and low confidence threshold (pathogen_all_lc) for the binarization of activities. At this stage, if molecules are duplicated, the values will be averaged and if they are > 0.5, the molecule will be considered active (1), else inactive (0)
+- Two files containing all the molecules and its binary classification for whole cell assays, both using a high confidence threshold (pathogen_org_all_hc) and low confidence threshold (pathogen_org_all_lc) for the binarization of activities
+- Two files containing all the molecules and its binary classification for protein assays, both using a high confidence threshold (pathogen_prot_all_hc) and low confidence threshold (pathogen_prot_all_lc) for the binarization of activities
+- Files containing the top assays as determined by the thresholds in default.py (for example, an IC50 assay with over 250 molecules on it). Those are identified by pathogen_org_hc_top_{}, pathogen_org_lc_top_{}, pathogen_prot_hc_top_{}, pathogen_prot_hc_top_{}. The assay id and target protein can be found in the summary file.
+- Files containing all results for selected assays (specified in ST_TYPEs in default.py). Currently those include MIC, IC50, IZ, Activity, Inhibition. They all relate to whole cell assays. The files produced are named pathogen_sttype_hc.csv and pathogen_sttype_lc.csv
+
+A `pathogen_summary.csv` file is created containing a summary of the processing for each pathogen
+
+### Parameters
+The following parameters are specified in `default.py`and can be modified according to the user needs:
+MIN_SIZE_ASSAY_TASK = 1000 #Top assays with at least this data size will get a specific task
+MIN_SIZE_PROTEIN_TASK = 250 #Top proteins with at least this data size will get a specific task
+MIN_COUNT_POSITIVE_CASES = 30 #Minimum number of positive hits per assay
+TOP_ASSAYS = 3 #Max number of selected organism assays
+TOP_PROTEINS = 3 #Max number of selected protein assays
+DATASET_SIZE_LIMIT = 1e6 # Limit the largest dataset
+ST_TYPES = ["MIC", 'IZ', "IC50", "Inhibition", "Activity"] #Organism Bioassays that are merged together
+SPLIT_METHOD = 'random' #split mode for ZairaChem (see below)
+
+Paths to several files, including the `/data` folder, can be specified as well
 
 # Train models with ZairaChem
 Optionally, we offer the possibility of preparing the data directly for model training using ZairaChem. The datasets will automatically be split into train/test (80/20) split to perform model validation. To learn more about ZairaChem and install it, please see its [own repository](https://github.com/ersilia-os/zaira-chem).
