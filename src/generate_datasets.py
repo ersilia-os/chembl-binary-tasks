@@ -59,6 +59,7 @@ class AllDatasets():
             else:
                 datasets[tc] = np.nan
                 print(f"Not Enough Positives in Dataset, only {count_pos}")
+                info_datasets[f'Dataset {summary_info[tc]} total data size']= len(df_)
                 info_datasets[f"Dataset {summary_info[tc]} has too few positives:"]= count_pos
         return datasets["activity_lc"], datasets["activity_hc"], info_datasets
 

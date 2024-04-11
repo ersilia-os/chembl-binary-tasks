@@ -26,14 +26,19 @@ bin = Binarizer()
 df, assay_entries_discarded, total_inconsistent = bin.run(df)
 df.to_csv(os.path.join(DATAPATH, pathogen, "{}_binary.csv".format(pathogen)), index=False)
 
+unique_smis = df["compound_chembl_id"].nunique()
+pos_lc = len(df[df["activity_lc"]==1])
+pos_hc = len(df[df["activity_hc"]==1])
 
-#save summary of cleaning
 summary_dict = {"Dataset Original total molecules":initial_len,
                 "Dataset Original: rows without sufficient activity info": no_activity_info,
                 "Dataset Original: rows with unprocessable SMILES": smi_not_processed,
                 "Dataset Original: rows with activity not in config file": assay_entries_discarded,
                 "Dataset Original: rows with inconsistent activity info": total_inconsistent,
-                "Dataset Original Final total molecules": initial_len - (no_activity_info+smi_not_processed+assay_entries_discarded+total_inconsistent)
+                "Dataset Original Final total molecules": initial_len - (no_activity_info+smi_not_processed+assay_entries_discarded+total_inconsistent),
+                "Dataset Original Unique molecules:": unique_smis,
+                "Dataset Original, low cutoff positive molecules:": pos_lc,
+                "Dataset Original, high cutoff positive molecules:": pos_hc
                 }
 
 td = AllDatasets(pathogen)
