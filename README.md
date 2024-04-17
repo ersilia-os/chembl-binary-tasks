@@ -75,7 +75,12 @@ Outputs:
 - Files containing the top assays as determined by the thresholds in default.py (for example, an IC50 assay with over 250 molecules on it). Those are identified by pathogen_org_hc_top_{}, pathogen_org_lc_top_{}, pathogen_prot_hc_top_{}, pathogen_prot_hc_top_{}. The assay id and target protein can be found in the summary file.
 - Files containing all results for selected assays (specified in ST_TYPEs in default.py). Currently those include MIC, IC50, IZ, Activity, Inhibition. They all relate to whole cell assays. The files produced are named pathogen_sttype_hc.csv and pathogen_sttype_lc.csv
 
-A `pathogen_summary.csv` file is created containing a summary of the processing for each pathogen
+A `pathogen_summary.csv` file is created containing a summary of the processing for each pathogen, and by running the following code snippet a full summary for all pathogens is created:
+
+```
+cd src
+python summary.py
+```
 
 ### Parameters
 The following parameters are specified in `default.py`and can be modified according to the user needs:

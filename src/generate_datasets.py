@@ -77,7 +77,7 @@ class OrgDatasets(AllDatasets):
         return lc, hc, info_datasets
 
     def top_assay_selector(self, df):
-        assay_counts = df.assay_id.value_counts()[:TOP_ASSAYS]
+        assay_counts = df.assay_chembl_id.value_counts()[:TOP_ASSAYS]
         assay_counts = assay_counts[assay_counts >= MIN_SIZE_ASSAY_TASK]
         list_top_assays = list(assay_counts.index)
         print('Selected top assays:', list_top_assays)
@@ -89,7 +89,7 @@ class OrgDatasets(AllDatasets):
         assays_data = {}
         if len(top_assays) != 0:
             for i, a in enumerate(top_assays):
-                df_ = df[df.assay_id==a]
+                df_ = df[df.assay_chembl_id==a]
                 lc, hc, info_datasets = self.create_datasets(df_,f'Org Top_{i}, (assay id:{a})' )
                 assays_data[f'top_{i}'] = lc, hc, info_datasets
         return assays_data
@@ -99,7 +99,7 @@ class ProteinDatasets(AllDatasets):
         self.pathogen = pathogen
 
     def top_protein_selector(self, df):
-        protein_counts = df.assay_id.value_counts()[:TOP_PROTEINS]
+        protein_counts = df.assay_chembl_id.value_counts()[:TOP_PROTEINS]
         protein_counts = protein_counts[protein_counts >= MIN_SIZE_PROTEIN_TASK]
         list_top_proteins = list(protein_counts.index)
         print('Selected top proteins:', list_top_proteins)
@@ -116,8 +116,8 @@ class ProteinDatasets(AllDatasets):
         prots_data = {}
         if len(top_prots) != 0:
             for i,p in enumerate(top_prots):
-                t = df[df["assay_id"]==p]["target_pref_name"].unique()[0]
-                df_ = df[df.assay_id==p]
+                t = df[df["assay_chembl_id"]==p]["target_pref_name"].unique()[0]
+                df_ = df[df.assay_chembl_id==p]
                 lc, hc, info_datasets = self.create_datasets(df_, f'Prot Top_{i}, (assay id: {p}), (target: {t})')
                 prots_data[f'top_{i}'] = lc, hc, info_datasets
         return prots_data
