@@ -129,7 +129,7 @@ class PathogenGetter():
         
         # NOTE: Selected rows are limited in case there are too many
         # Pending to give a warning if not all rows are shown
-        sql = "SELECT * FROM tmp_activity_protein limit 500000"
+        sql = "SELECT * FROM tmp_activity_protein limit 1000000"
         df = sqlio.read_sql_query(sql, conn)
         conn.close()  # Close database connection
 
