@@ -3,6 +3,7 @@ import os
 
 abspath = os.path.dirname(os.path.abspath(__file__))
 
+DATABASE_NAME = "chembl_35"
 CHEMBL_USR = "chembl_user"
 CHEMBL_PWD = "aaa"
 UNITS_MASTER = pd.read_csv(os.path.join(abspath, "..", "config", "ucum.csv"))

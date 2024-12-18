@@ -1,14 +1,14 @@
 import os
 import sys
 import pandas as pd
-import numpy as np
 import psycopg2
 import pandas.io.sql as sqlio
 from rdkit import Chem
 
 abspath = os.path.abspath(__file__)
 sys.path.append(abspath)
-from default import CHEMBL_PWD, CHEMBL_USR, DATAPATH, PATHOGENSPATH
+from default import CHEMBL_PWD, CHEMBL_USR, DATAPATH, PATHOGENSPATH, DATABASE_NAME
+import argparse
 
 class PathogenGetter():
     """
@@ -19,7 +19,7 @@ class PathogenGetter():
         self.db_pwd = CHEMBL_PWD
         self.patho_search = patho_search
 
-    def chembl_activity_target(self, max_heavy_atoms=None,db_name='chembl_33', db_host='localhost', db_port=5432):
+    def chembl_activity_target(self, max_heavy_atoms=None,db_name=DATABASE_NAME, db_host='localhost', db_port=5432):
         # Connect to chembl database
         conn = psycopg2.connect(database=db_name, user=self.db_user, password=self.db_pwd, host=db_host, port=db_port)
         cursor = conn.cursor()
@@ -129,8 +129,9 @@ class PathogenGetter():
         
         # NOTE: Selected rows are limited in case there are too many
         # Pending to give a warning if not all rows are shown
-        sql = "SELECT * FROM tmp_activity_protein limit 1000000"
+        sql = "SELECT * FROM tmp_activity_protein limit 10000000"
         df = sqlio.read_sql_query(sql, conn)
+        print(df.head())
         conn.close()  # Close database connection
 
         if max_heavy_atoms is not None:
@@ -146,11 +147,22 @@ class PathogenGetter():
         return df.copy()
     
 if __name__ == "__main__":
+    # Parse arguments
+    parser = argparse.ArgumentParser(description='Get pathogen data from ChEMBL database.')
+    parser.add_argument('-p', '--pathogen_code', type=str, required=False, help='Pathogen code to search for')
+    args = parser.parse_args()
     #Obtain desired pathogen data  
     df_pathogens = pd.read_csv(PATHOGENSPATH)
-    list_pathogen_codes = df_pathogens.pathogen_code
-    list_pathogen_search_text = df_pathogens.search_text
+    list_pathogen_codes = list(df_pathogens.pathogen_code)
+    list_pathogen_search_text = list(df_pathogens.search_text)
+    print(list_pathogen_codes)
+    if args.pathogen_code is not None:
+        if args.pathogen_code not in list_pathogen_codes:
+            raise ValueError(f'Pathogen code {args.pathogen_code} not found in pathogens.csv')
     for i, patho_code in enumerate(list_pathogen_codes):
+        if args.pathogen_code is not None:
+            if patho_code != args.pathogen_code:
+                continue
         print('------------------------------------------------------------')
         print(f'Creating data for pathogen {patho_code} ({list_pathogen_search_text[i]})')
         print('------------------------------------------------------------')
