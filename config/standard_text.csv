@@ -1,0 +1,13 @@
+standard_text_value,standard_text_classification
+Active,1
+Compound NOT metabolized,-1
+Compound metabolized,1
+Could not be calculated,0
+IC50 could not be calculated,0
+Inactive,-1
+Linear Fit,0
+NOT MEASURED,0
+Nil,-1
+No binding,-1
+Not Active,-1
+Not Determined,0

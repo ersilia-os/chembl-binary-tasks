@@ -12,7 +12,7 @@ class ChemblMoleculeSampler:
     FILENAME_ALL_MOLECULES = 'chembl_all_molecules.csv'
 
     def __init__(self, data_path, db_user, db_password,
-                 db_name='chembl_33', db_host='localhost', db_port=5432,
+                 db_name='chembl_35', db_host='localhost', db_port=5432,
                  max_heavy_atoms=None):
         """
         Load the list of all molecules into dataframe df_all_molecules

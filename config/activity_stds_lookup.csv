@@ -1,151 +1,151 @@
-standard_type,standard_units,definition,normal_range_min,normal_range_max
-"AC50","nM","Concentration required for 50% activity",0.010000000000,100000.000000000000
-"ALB","ug.mL-1","A measurement of the albumin protein in a biological specimen.",,
-"ALBGLOB","-","The ratio of albumin to globulin in a biological specimen.",,
-"ALP","IU.L-1","A measurement of the alkaline phosphatase in a biological specimen.",,
-"ALP","U.L-1","A measurement of the alkaline phosphatase in a biological specimen.",,
-"ALT","IU.L-1","A measurement of the alanine aminotransferase in a biological specimen.",,
-"ALT","U.L-1","A measurement of the alanine aminotransferase in a biological specimen.",,
-"APDc","-","Normalised action potential duration (APD) defined as: APD (ms) / cube root of Beat Interval (ms)",,
-"APTT","s","A measurement of the length of time that it takes for clotting to occur when reagents are added to a plasma specimen. The test is partial due to the absence of tissue factor (Factor III) from the reaction mixture.",,
-"AST","IU.L-1","A measurement of the aspartate aminotransferase in a biological specimen.",,
-"AST","U.L-1","A measurement of the aspartate aminotransferase in a biological specimen.",,
-"AUC","ng.hr.g-1","Area under the drug concentration time curve",,
-"AUC","ng.hr.mL-1","Area under the drug concentration time curve",10.000000000000,10000000.000000000000
-"AUC","uM.hr","Area under the drug concentration time curve",0.001000000000,10000.000000000000
-"BASO","cells.uL-1","A measurement of the basophils in a biological specimen.",,
-"BASOLE","%","A relative measurement (ratio or percentage) of the basophils to leukocytes in a biological specimen.",,
-"BILDIR","ug.mL-1","A measurement of the conjugated or water-soluble bilirubin in a biological specimen.",,
-"BILI","ug.mL-1","A measurement of the total bilirubin in a biological specimen.",,
-"BUN","ug.mL-1","A measurement of the urea nitrogen in a blood specimen.",,
-"CALCIUM","ug.mL-1","A measurement of the calcium in a biological specimen.",,
-"CC50","nM","Concentration required for 50% cytotoxicity",1.000000000000,10000000.000000000000
-"CC50","ug.mL-1","Concentration required for 50% cytotoxicity",0.000500000000,5000.000000000000
-"CHLORIDE","mEq.L-1","A measurement of the chloride in a biological specimen.",,
-"CHOL","ug.mL-1","A measurement of the cholesterol in a biological specimen.",,
-"CK","U.L-1","A measurement of the total creatine kinase in a biological specimen.",,
-"CL","mL.min-1.g-1","Clearance",0.000000000000,10000.000000000000
-"CL","mL.min-1.kg-1","Clearance",0.000000000000,10000.000000000000
-"CL","uL.min-1.(10^6cells)-1","Clearance",0.100000000000,500.000000000000
-"CL/F","mL.min-1.kg-1","Clearance/Bioavailability",0.000000000000,10000.000000000000
-"CL_renal","mL.min-1.kg-1","Renal clearance",0.000000000000,10000.000000000000
-"CLogD","-","Calculated Log(Distribution Coefficient)",-10.000000000000,15.000000000000
-"CLogD7.4","-","Calculated Log(Distribution Coefficient) at pH7.4",-10.000000000000,15.000000000000
-"CLogP","-","Calculated Log(Partition Coefficient)",-10.000000000000,15.000000000000
-"CO2","nM","A measurement of the carbon dioxide gas in a biological specimen.",,
-"CREAT","ug.mL-1","A measurement of the creatinine in a biological specimen.",,
-"Cmax","nM","Maximum concentration",1.000000000000,10000000.000000000000
-"Cmax","ug.g-1","Maximum concentration",,
-"Cmax","ug.mL-1","Maximum concentration",0.000500000000,5000.000000000000
-"Compound recovery","%","Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, or percentage of dose recovered",,
-"Compound recovery","ng.eq.g-1","Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, percentage of dose recovered",,
-"Compound recovery","ng.eq.mL-1","Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, percentage of dose recovered",,
-"DOSE","mg.kg-1","Amount of a substance administered",,
-"Delta Tm","degrees C","Change in melting temperature",,
-"EC50","nM","Effective concentration for 50% activity",0.010000000000,100000.000000000000
-"EC50","ug.mL-1","Effective concentration for 50% activity",0.000005000000,50.000000000000
-"ED50","mg.kg-1","Effective dose for 50% activity",0.000500000000,500.000000000000
-"ED50","umol.kg-1","Effective dose for 50% activity",0.001000000000,1000.000000000000
-"EOS","cells.uL-1","A measurement of the eosinophils in a biological specimen.",,
-"EOSLE","%","A relative measurement (ratio or percentage) of the eosinophils to leukocytes in a biological specimen.",,
-"F","%","Bioavailability",0.000000000000,150.000000000000
-"FIBRINO","ug.mL-1","A measurement of the fibrinogen in a biological specimen.",,
-"FPDc","-","Normalised field potential duration (FPD) defined as: FPD (ms) / cube root of Beat Interval (ms)",,
-"Fu","-","Fraction of compound unbound",0.000000000000,1.000000000000
-"GGT","IU.L-1","A measurement of the gamma glutamyl transferase in a biological specimen.",,
-"GI50","nM","Concentration required for 50% growth inhibition",1.000000000000,10000000.000000000000
-"GI50","ug.mL-1","Concentration required for 50% growth inhibition",0.000500000000,5000.000000000000
-"GLUC","ug.mL-1","A measurement of the glucose in a biological specimen.",,
-"HCT","%","The percentage of a whole blood specimen that is composed of red blood cells (erythrocytes).",,
-"HGB","ug.mL-1","A measurement of the hemoglobin in a biological specimen.",,
-"IC50","nM","Concentration required for 50% inhibition",0.010000000000,100000.000000000000
-"IC50","ug.mL-1","Concentration required for 50% inhibition",0.000005000000,50.000000000000
-"IC90","nM","Concentration required for 90% inhibition",0.010000000000,100000.000000000000
-"IC90","ug.mL-1","Concentration required for 90% inhibition",0.000005000000,50.000000000000
-"IC95","nM","Concentration required for 95% inhibition",0.010000000000,100000.000000000000
-"IC99","nM","Concentration required for 99% inhibition",0.010000000000,100000.000000000000
-"IC99","ug.mL-1","Concentration required for 99% inhibition",0.000005000000,50.000000000000
-"ID50","mg.kg-1","Dose required for 50% inhibition",0.000500000000,500.000000000000
-"ID50","umol.kg-1","Dose required for 50% inhibition",0.001000000000,1000.000000000000
-"IFI","%","Inhibition Frequency (promiscuity) Index",0.000000000000,100.000000000000
-"IZ","mm","Zone of inhibition",0.000000000000,50.000000000000
-"Inhibition","%","Inhibition",-10.000000000000,150.000000000000
-"Kb","nM","Equilibrium binding constant",0.010000000000,100000.000000000000
-"Kd","nM","Dissociation constant",0.010000000000,100000.000000000000
-"Ki","nM","Inhibition constant",0.010000000000,100000.000000000000
-"Km","nM","Michaelis constant",10.000000000000,100000000.000000000000
-"LC50","nM","Concentration required for 50% lethality",1.000000000000,10000000.000000000000
-"LC50","ug.mL-1","Concentration required for 50% lethality",0.000500000000,5000.000000000000
-"LD50","mg.kg-1","Dose required for 50% lethality",0.000500000000,5000.000000000000
-"LD50","umol.kg-1","Dose required for 50% lethality",0.001000000000,10000.000000000000
-"LDH","IU.L-1","A measurement of the lactate dehydrogenase in a biological specimen.",,
-"LDH","U.L-1","A measurement of the lactate dehydrogenase in a biological specimen.",,
-"LIPASE","U.L-1","A measurement of the pancreatic lipase in a biological specimen.",,
-"LYM","cells.uL-1","A measurement of the lymphocytes in a biological specimen.",,
-"LYMLE","%","A relative measurement (ratio or percentage) of the lymphocytes to leukocytes in a biological specimen.",,
-"Log S","-","Log of solubility",,
-"LogD","-","Log(Distribution Coefficient)",-10.000000000000,15.000000000000
-"LogD5.0","-","Log(Distribution Coefficient) at pH 5.0",-10.000000000000,15.000000000000
-"LogD5.5","-","Log(Distribution Coefficient) at pH 5.5",-10.000000000000,15.000000000000
-"LogD6.5","-","Log(Distribution Coefficient) at pH 6.5",-10.000000000000,15.000000000000
-"LogD7.4","-","Log(Distribution Coefficient) at pH 7.4",-10.000000000000,15.000000000000
-"LogP","-","Log(Partition Coefficient)",-10.000000000000,15.000000000000
-"LogPapp","-","Log(Apparent permeability)",-10.000000000000,15.000000000000
-"MCC","nM","Minimum cytotoxic concentration",1.000000000000,10000000.000000000000
-"MCC","ug.mL-1","Minimum cytotoxic concentration",0.000500000000,5000.000000000000
-"MCH","pg","A quantitative measurement of the mean amount of hemoglobin per erythrocyte in a biological specimen.",,
-"MCHC","%","A quantitative measurement of the mean amount of hemoglobin per erythrocytes in a specified volume of a biological specimen.",,
-"MCHC","ug.mL-1","A quantitative measurement of the mean amount of hemoglobin per erythrocytes in a specified volume of a biological specimen.",,
-"MCV","fL","A quantitative measurement of the mean volume of erythrocytes in a biological specimen.",,
-"MIC","nM","Minimum inhibitory concentration",1.000000000000,10000000.000000000000
-"MIC","ug.mL-1","Minimum inhibitory concentration",0.000500000000,5000.000000000000
-"MIC50","nM","Minimum inhibitory concentration in 50% of population",1.000000000000,10000000.000000000000
-"MIC50","ug.mL-1","Minimum inhibitory concentration in 50% of population",0.000500000000,5000.000000000000
-"MIC70","ug.mL-1","Minimum inhibitory concentration in 70% of population",0.000500000000,5000.000000000000
-"MIC80","nM","Minimum inhibitory concentration in 80% of population",1.000000000000,10000000.000000000000
-"MIC80","ug.mL-1","Minimum inhibitory concentration in 80% of population",0.000500000000,5000.000000000000
-"MIC90","nM","Minimum inhibitory concentration in 90% of population",1.000000000000,10000000.000000000000
-"MIC90","ug.mL-1","Minimum inhibitory concentration in 90% of population",0.000500000000,5000.000000000000
-"MONO","cells.uL-1","A measurement of the monocytes in a biological specimen.",,
-"MONOLE","%","A relative measurement (ratio or percentage) of the monocytes to leukocytes in a biological specimen.",,
-"MRT","hr","Mean residence time",0.010000000000,1000.000000000000
-"NEUTLE","%","A relative measurement (ratio or percentage) of the neutrophils to leukocytes in a biological specimen.",,
-"NEUTSG","cells.uL-1","A measurement of the segmented neutrophils in a biological specimen.",,
-"PHOS","ug.mL-1","A measurement of the phosphate in a biological specimen.",,
-"PHOSLPD","ug.mL-1","A measurement of the phospholipids in a biological specimen.",,
-"PLAT","cells.uL-1","A measurement of the platelets (non-nucleated thrombocytes) in a biological specimen.",,
-"POTASSIUM","mEq.L-1","A measurement of the potassium in a biological specimen.",,
-"PPB","%","Plasma protein binding as %bound",0.000000000000,105.000000000000
-"PROT","ug.mL-1","A measurement of a group of complex organic macromolecules composed of one or more alpha-L-amino acid chains in a biological specimen.",,
-"PT","s","A blood clotting measurement that evaluates the extrinsic pathway of coagulation.",,
-"Potency","nM","Concentration or dose required to elicit a specific response",1.000000000000,10000000.000000000000
-"RBC","cells.uL-1","A measurement of the total erythrocytes in a biological specimen.",,
-"RBCNUC","/100WBC","A measurement of the nucleated erythrocytes (large, immature nucleated erythrocytes) in a biological specimen.",,
-"RETIRBC","%","A relative measurement (ratio or percentage) of reticulocytes to erythrocytes in a biological specimen.",,
-"Radiolabel recovery","%","Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",,
-"Radiolabel recovery","ng.eq.g-1","Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",,
-"Radiolabel recovery","ng.eq.mL-1","Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",,
-"SODIUM","mEq.L-1","A measurement of the sodium in a biological specimen.",,
-"Solubility","nM","Solubility ",100.000000000000,1000000000.000000000000
-"Solubility","ug.mL-1","Solubility",0.050000000000,50000.000000000000
-"Stability","%","A measurement of the chemical or metabolic stability of the compound.",,
-"T1/2","hr","Half-life",0.001000000000,10000.000000000000
-"TERMBW","g","The weight of a subject at a specified end point. (NCI)",,
-"TGI","nM","Concentration required for total growth inhibition",1.000000000000,10000000.000000000000
-"TGI","ug.mL-1","Concentration required for total growth inhibition",0.000500000000,5000.000000000000
-"TIME","hr","Point at which an experimental intervention is performed e.g., dosing of a substance, measuring a sample",,
-"TRIG","ug.mL-1","A measurement of the triglycerides in a biological specimen.",,
-"Tmax","hr","Time for maximum concentration",0.010000000000,1000.000000000000
-"URATE","ug.mL-1","A measurement of the urate in a biological specimen.",,
-"Vd","L.kg-1","Volume of Distribution",0.010000000000,1000.000000000000
-"Vd/F","L.kg-1","Volume of distribution after non-intravenous administration",0.010000000000,1000.000000000000
-"Vdss","L.kg-1","Steady State Volume of Distribution",0.010000000000,1000.000000000000
-"Vdss/F","L.kg-1","Volume of distribution at steady state after non-intravenous administration",0.010000000000,1000.000000000000
-"WBC","cells.uL-1","A measurement of the leukocytes in a biological specimen.",,
-"WEIGHT","g","The vertical force exerted by a mass as a result of gravity. (NCI)",,
-"XC50","nM","Concentration required for 50% effect",0.010000000000,100000.000000000000
-"fAUC","ng.hr.mL-1","Area under the free drug concentration time curve",10.000000000000,10000000.000000000000
-"fAUC","uM.hr","Area under the free drug concentration time curve",0.001000000000,10000.000000000000
-"k_obs","s-1","Observed rate constant",0.000001000000,100000.000000000000
-"k_off","s-1","Dissociation rate constant",0.000001000000,1000.000000000000
-"k_on","M-1.s-1","Association rate constant",1.000000000000,10000000.000000000000
+std_act_id,standard_type,definition,standard_units,normal_range_min,normal_range_max,activity_direction
+1,CC50,Concentration required for 50% cytotoxicity,nM,1.000000000000,10000000.000000000000,-1
+2,EC50,Effective concentration for 50% activity,nM,0.010000000000,100000.000000000000,-1
+3,GI50,Concentration required for 50% growth inhibition,nM,1.000000000000,10000000.000000000000,-1
+4,IC50,Concentration required for 50% inhibition,nM,0.010000000000,100000.000000000000,-1
+5,Ki,Inhibition constant,nM,0.010000000000,100000.000000000000,-1
+6,Solubility,Solubility ,nM,100.000000000000,1000000000.000000000000,0
+7,Solubility,Solubility,ug.mL-1,0.050000000000,50000.000000000000,0
+8,T1/2,Half-life,hr,0.001000000000,10000.000000000000,0
+9,CL,Clearance,mL.min-1.g-1,0.000000000000,10000.000000000000,0
+10,CL,Clearance,mL.min-1.kg-1,0.000000000000,10000.000000000000,0
+11,CL_renal,Renal clearance,mL.min-1.kg-1,0.000000000000,10000.000000000000,0
+12,CL/F,Clearance/Bioavailability,mL.min-1.kg-1,0.000000000000,10000.000000000000,0
+13,CLogD,Calculated Log(Distribution Coefficient),-,-10.000000000000,15.000000000000,0
+14,CLogD7.4,Calculated Log(Distribution Coefficient) at pH7.4,-,-10.000000000000,15.000000000000,0
+15,CLogP,Calculated Log(Partition Coefficient),-,-10.000000000000,15.000000000000,0
+16,F,Bioavailability,%,0.000000000000,150.000000000000,0
+17,IC95,Concentration required for 95% inhibition,nM,0.010000000000,100000.000000000000,-1
+18,IFI,Inhibition Frequency (promiscuity) Index,%,0.000000000000,100.000000000000,1
+19,Inhibition,Inhibition,%,-10.000000000000,150.000000000000,1
+20,LogP,Log(Partition Coefficient),-,-10.000000000000,15.000000000000,0
+21,LogPapp,Log(Apparent permeability),-,-10.000000000000,15.000000000000,0
+22,Tmax,Time for maximum concentration,hr,0.010000000000,1000.000000000000,0
+23,Vd,Volume of Distribution,L.kg-1,0.010000000000,1000.000000000000,0
+24,Vdss,Steady State Volume of Distribution,L.kg-1,0.010000000000,1000.000000000000,0
+25,XC50,Concentration required for 50% effect,nM,0.010000000000,100000.000000000000,-1
+26,Vd/F,Volume of distribution after non-intravenous administration,L.kg-1,0.010000000000,1000.000000000000,0
+27,Cmax,Maximum concentration,ug.mL-1,0.000500000000,5000.000000000000,0
+28,Cmax,Maximum concentration,nM,1.000000000000,10000000.000000000000,0
+29,IC50,Concentration required for 50% inhibition,ug.mL-1,0.000005000000,50.000000000000,-1
+30,MRT,Mean residence time,hr,0.010000000000,1000.000000000000,0
+31,IC90,Concentration required for 90% inhibition,nM,0.010000000000,100000.000000000000,-1
+32,IC90,Concentration required for 90% inhibition,ug.mL-1,0.000005000000,50.000000000000,-1
+33,MCC,Minimum cytotoxic concentration,nM,1.000000000000,10000000.000000000000,-1
+34,MCC,Minimum cytotoxic concentration,ug.mL-1,0.000500000000,5000.000000000000,-1
+35,MIC,Minimum inhibitory concentration,nM,1.000000000000,10000000.000000000000,-1
+36,MIC,Minimum inhibitory concentration,ug.mL-1,0.000500000000,5000.000000000000,-1
+37,Kd,Dissociation constant,nM,0.010000000000,100000.000000000000,-1
+38,Vdss/F,Volume of distribution at steady state after non-intravenous administration,L.kg-1,0.010000000000,1000.000000000000,0
+39,CC50,Concentration required for 50% cytotoxicity,ug.mL-1,0.000500000000,5000.000000000000,-1
+40,EC50,Effective concentration for 50% activity,ug.mL-1,0.000005000000,50.000000000000,-1
+41,GI50,Concentration required for 50% growth inhibition,ug.mL-1,0.000500000000,5000.000000000000,-1
+42,IC99,Concentration required for 99% inhibition,nM,0.010000000000,100000.000000000000,-1
+43,IC99,Concentration required for 99% inhibition,ug.mL-1,0.000005000000,50.000000000000,-1
+44,LC50,Concentration required for 50% lethality,nM,1.000000000000,10000000.000000000000,-1
+45,LC50,Concentration required for 50% lethality,ug.mL-1,0.000500000000,5000.000000000000,-1
+46,TGI,Concentration required for total growth inhibition,nM,1.000000000000,10000000.000000000000,-1
+47,TGI,Concentration required for total growth inhibition,ug.mL-1,0.000500000000,5000.000000000000,-1
+48,LD50,Dose required for 50% lethality,mg.kg-1,0.000500000000,5000.000000000000,-1
+49,LD50,Dose required for 50% lethality,umol.kg-1,0.001000000000,10000.000000000000,-1
+50,Km,Michaelis constant,nM,10.000000000000,100000000.000000000000,-1
+51,Potency,Concentration or dose required to elicit a specific response,nM,1.000000000000,10000000.000000000000,-1
+52,AC50,Concentration required for 50% activity,nM,0.010000000000,100000.000000000000,-1
+53,ED50,Effective dose for 50% activity,mg.kg-1,0.000500000000,500.000000000000,-1
+54,IZ,Zone of inhibition,mm,0.000000000000,50.000000000000,-1
+55,MIC50,Minimum inhibitory concentration in 50% of population,nM,1.000000000000,10000000.000000000000,-1
+56,MIC80,Minimum inhibitory concentration in 80% of population,nM,1.000000000000,10000000.000000000000,-1
+57,MIC90,Minimum inhibitory concentration in 90% of population,nM,1.000000000000,10000000.000000000000,-1
+58,MIC50,Minimum inhibitory concentration in 50% of population,ug.mL-1,0.000500000000,5000.000000000000,-1
+59,MIC80,Minimum inhibitory concentration in 80% of population,ug.mL-1,0.000500000000,5000.000000000000,-1
+60,MIC90,Minimum inhibitory concentration in 90% of population,ug.mL-1,0.000500000000,5000.000000000000,-1
+61,MIC70,Minimum inhibitory concentration in 70% of population,ug.mL-1,0.000500000000,5000.000000000000,-1
+62,ID50,Dose required for 50% inhibition,mg.kg-1,0.000500000000,500.000000000000,-1
+63,ID50,Dose required for 50% inhibition,umol.kg-1,0.001000000000,1000.000000000000,-1
+64,ED50,Effective dose for 50% activity,umol.kg-1,0.001000000000,1000.000000000000,-1
+65,k_obs,Observed rate constant,s-1,0.000001000000,100000.000000000000,-1
+66,k_on,Association rate constant,M-1.s-1,1.000000000000,10000000.000000000000,-1
+67,k_off,Dissociation rate constant,s-1,0.000001000000,1000.000000000000,-1
+68,CK,A measurement of the total creatine kinase in a biological specimen.,U.L-1,,,0
+69,PT,A blood clotting measurement that evaluates the extrinsic pathway of coagulation.,s,,,0
+70,ALB,A measurement of the albumin protein in a biological specimen.,ug.mL-1,,,0
+71,ALP,A measurement of the alkaline phosphatase in a biological specimen.,U.L-1,,,0
+72,ALP,A measurement of the alkaline phosphatase in a biological specimen.,IU.L-1,,,0
+73,ALT,A measurement of the alanine aminotransferase in a biological specimen.,U.L-1,,,0
+74,ALT,A measurement of the alanine aminotransferase in a biological specimen.,IU.L-1,,,0
+75,AST,A measurement of the aspartate aminotransferase in a biological specimen.,U.L-1,,,0
+76,AST,A measurement of the aspartate aminotransferase in a biological specimen.,IU.L-1,,,0
+77,BUN,A measurement of the urea nitrogen in a blood specimen.,ug.mL-1,,,0
+78,CO2,A measurement of the carbon dioxide gas in a biological specimen.,nM,,,0
+79,EOS,A measurement of the eosinophils in a biological specimen.,cells.uL-1,,,0
+80,GGT,A measurement of the gamma glutamyl transferase in a biological specimen.,IU.L-1,,,0
+81,HCT,The percentage of a whole blood specimen that is composed of red blood cells (erythrocytes).,%,,,0
+82,HGB,A measurement of the hemoglobin in a biological specimen.,ug.mL-1,,,0
+83,LDH,A measurement of the lactate dehydrogenase in a biological specimen.,U.L-1,,,0
+84,LDH,A measurement of the lactate dehydrogenase in a biological specimen.,IU.L-1,,,0
+85,LYM,A measurement of the lymphocytes in a biological specimen.,cells.uL-1,,,0
+86,MCH,A quantitative measurement of the mean amount of hemoglobin per erythrocyte in a biological specimen.,pg,,,0
+87,MCV,A quantitative measurement of the mean volume of erythrocytes in a biological specimen.,fL,,,0
+88,RBC,A measurement of the total erythrocytes in a biological specimen.,cells.uL-1,,,0
+89,WBC,A measurement of the leukocytes in a biological specimen.,cells.uL-1,,,0
+90,APTT,A measurement of the length of time that it takes for clotting to occur when reagents are added to a plasma specimen. The test is partial due to the absence of tissue factor (Factor III) from the reaction mixture.,s,,,0
+91,BASO,A measurement of the basophils in a biological specimen.,cells.uL-1,,,0
+92,BILI,A measurement of the total bilirubin in a biological specimen.,ug.mL-1,,,0
+93,CHOL,A measurement of the cholesterol in a biological specimen.,ug.mL-1,,,0
+94,GLUC,A measurement of the glucose in a biological specimen.,ug.mL-1,,,0
+95,MCHC,A quantitative measurement of the mean amount of hemoglobin per erythrocytes in a specified volume of a biological specimen.,%,,,0
+96,MCHC,A quantitative measurement of the mean amount of hemoglobin per erythrocytes in a specified volume of a biological specimen.,ug.mL-1,,,0
+97,MONO,A measurement of the monocytes in a biological specimen.,cells.uL-1,,,0
+98,PHOS,A measurement of the phosphate in a biological specimen.,ug.mL-1,,,0
+99,PLAT,A measurement of the platelets (non-nucleated thrombocytes) in a biological specimen.,cells.uL-1,,,0
+100,PROT,A measurement of a group of complex organic macromolecules composed of one or more alpha-L-amino acid chains in a biological specimen.,ug.mL-1,,,0
+101,TRIG,A measurement of the triglycerides in a biological specimen.,ug.mL-1,,,0
+102,CREAT,A measurement of the creatinine in a biological specimen.,ug.mL-1,,,0
+103,EOSLE,A relative measurement (ratio or percentage) of the eosinophils to leukocytes in a biological specimen.,%,,,0
+104,LYMLE,A relative measurement (ratio or percentage) of the lymphocytes to leukocytes in a biological specimen.,%,,,0
+105,URATE,A measurement of the urate in a biological specimen.,ug.mL-1,,,0
+106,BASOLE,A relative measurement (ratio or percentage) of the basophils to leukocytes in a biological specimen.,%,,,0
+107,BILDIR,A measurement of the conjugated or water-soluble bilirubin in a biological specimen.,ug.mL-1,,,0
+108,LIPASE,A measurement of the pancreatic lipase in a biological specimen.,U.L-1,,,0
+109,MONOLE,A relative measurement (ratio or percentage) of the monocytes to leukocytes in a biological specimen.,%,,,0
+110,NEUTLE,A relative measurement (ratio or percentage) of the neutrophils to leukocytes in a biological specimen.,%,,,0
+111,NEUTSG,A measurement of the segmented neutrophils in a biological specimen.,cells.uL-1,,,0
+112,RBCNUC,"A measurement of the nucleated erythrocytes (large, immature nucleated erythrocytes) in a biological specimen.",/100WBC,,,0
+113,SODIUM,A measurement of the sodium in a biological specimen.,mEq.L-1,,,0
+114,TERMBW,The weight of a subject at a specified end point. (NCI),g,,,0
+115,WEIGHT,The vertical force exerted by a mass as a result of gravity. (NCI),g,,,0
+116,ALBGLOB,The ratio of albumin to globulin in a biological specimen.,-,,,0
+117,CALCIUM,A measurement of the calcium in a biological specimen.,ug.mL-1,,,0
+118,FIBRINO,A measurement of the fibrinogen in a biological specimen.,ug.mL-1,,,0
+119,PHOSLPD,A measurement of the phospholipids in a biological specimen.,ug.mL-1,,,0
+120,RETIRBC,A relative measurement (ratio or percentage) of reticulocytes to erythrocytes in a biological specimen.,%,,,0
+121,CHLORIDE,A measurement of the chloride in a biological specimen.,mEq.L-1,,,0
+122,POTASSIUM,A measurement of the potassium in a biological specimen.,mEq.L-1,,,0
+124,AUC,Area under the drug concentration time curve,uM.hr,0.001000000000,10000.000000000000,0
+127,AUC,Area under the drug concentration time curve,ng.hr.mL-1,10.000000000000,10000000.000000000000,0
+130,fAUC,Area under the free drug concentration time curve,uM.hr,0.001000000000,10000.000000000000,0
+134,fAUC,Area under the free drug concentration time curve,ng.hr.mL-1,10.000000000000,10000000.000000000000,0
+135,CL,Clearance,uL.min-1.(10^6cells)-1,0.100000000000,500.000000000000,0
+136,Compound recovery,"Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, percentage of dose recovered",ng.eq.g-1,,,0
+137,Radiolabel recovery,"Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",ng.eq.g-1,,,0
+138,Compound recovery,"Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, percentage of dose recovered",ng.eq.mL-1,,,0
+139,Radiolabel recovery,"Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",ng.eq.mL-1,,,0
+140,Compound recovery,"Recovery of a specific compound (e.g. parent or metabolite) in plasma, tissue or excreta, e.g. as absolute or qualitative measurement, or percentage of dose recovered",%,,,0
+141,Radiolabel recovery,"Recovery of radioactivity in plasma, tissue or excreta after administration of radiolabelled compound, as absolute measurement or percentage of dose",%,,,0
+142,AUC,Area under the drug concentration time curve,ng.hr.g-1,,,0
+143,Cmax,Maximum concentration,ug.g-1,,,0
+144,Log S,Log of solubility,-,,,0
+145,Kb,Equilibrium binding constant,nM,0.010000000000,100000.000000000000,-1
+146,LogD,Log(Distribution Coefficient),-,-10.000000000000,15.000000000000,0
+147,LogD7.4,Log(Distribution Coefficient) at pH 7.4,-,-10.000000000000,15.000000000000,0
+148,Delta Tm,Change in melting temperature,degrees C,,,-1
+149,Fu,Fraction of compound unbound,-,0.000000000000,1.000000000000,0
+150,PPB,Plasma protein binding as %bound,%,0.000000000000,105.000000000000,0
+152,DOSE,Amount of a substance administered,mg.kg-1,,,-1
+153,TIME,"Point at which an experimental intervention is performed e.g., dosing of a substance, measuring a sample",hr,,,0
+154,LogD5.0,Log(Distribution Coefficient) at pH 5.0,-,-10.000000000000,15.000000000000,0
+155,LogD6.5,Log(Distribution Coefficient) at pH 6.5,-,-10.000000000000,15.000000000000,0
+156,LogD5.5,Log(Distribution Coefficient) at pH 5.5,-,-10.000000000000,15.000000000000,0
+159,APDc,Normalised action potential duration (APD) defined as: APD (ms) / cube root of Beat Interval (ms),-,,,-1
+160,FPDc,Normalised field potential duration (FPD) defined as: FPD (ms) / cube root of Beat Interval (ms),-,,,0
+161,Stability,A measurement of the chemical or metabolic stability of the compound.,%,,,0

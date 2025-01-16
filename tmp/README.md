@@ -1,0 +1,1 @@
+{('Kd', 'nM'): -1, ('Ki', 'nM'): -1, ('GI50', 'nM'): -1, ('Inhibition', '%'): 1, ('% Control', '%'): -1, ('AbsAC40_uM', 'uM'): -1, ('MIC', 'nM'): -1, ('Survival', '%'): -1, ('IC50 relative', 'uM'): -1, ('Activity', 'um'): -1, ('AbsAC40', 'uM'): -1, ('AbsAC200_uM', 'uM'): -1, ('AbsAC35_uM', 'uM'): -1}

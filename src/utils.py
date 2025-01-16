@@ -1,5 +1,6 @@
 import os
 import sys
+from tqdm import tqdm
 import pandas as pd
 import numpy as np
 from rdkit import Chem
@@ -10,30 +11,76 @@ sys.path.append(abspath)
 
 from default import UNITS_MASTER, CONFIGPATH
 
+
 class RawCleaner():
     def __init__(self):
         self.ucum = UNITS_MASTER
+    
+    def get_standard_text(self, df):
+        """The variable standard_text contains information about the type of result obtained in the experiment.
+        We will use this information to assign a value to standard text:
+        The column standard_text_active will be:
+           - 1 if active.
+           - 0 if inactive.
+           - Empty otherwise.
+        """
+        sc = pd.read_csv(os.path.join(CONFIGPATH, "standard_text_classified.csv"))
+        standard_text_dict = {}
+        for k, v in sc.values:
+            for x in k.split(";"):
+                standard_text_dict[x] = v
+        standard_text_active = []
+        for c in tqdm(df['standard_text'].tolist()):
+            c = str(c)
+            if c is None or c == 'nan':
+                standard_text_active.append(np.nan)
+            else:
+                if c not in standard_text_dict:
+                    raise Exception(f"Standard text {c} not found in the standard text file. Please check the standard_text_classified.csv file and update it accordingly.")
+                else:
+                    val = standard_text_dict[c]
+                    if val == "":
+                        standard_text_active.append(np.nan)
+                    else:
+                        standard_text_active.append(int(val))
+        df['standard_text_active'] = standard_text_active
+        return df
     
     def get_comment(self, df):
         """The variable comment_active may sometimes include an indication that the result 
         of the experiment is "Active" or "Not Active".
         We will use this information in the calculation of the target variables.
-        The variable comment_active will be:
-            - True if activity_comment = 'active'
-            - False if activity_comment = 'not active'
-            - NA otherwise
+        The column comment_active will be:
+            - 1 if activity_comment = 'active', etc.
+            - 0 if activity_comment = 'not active', 'inactive, etc.
+            - Empty otherwise
         """
-        df['comment_active'] = df['activity_comment'].str.upper()\
-                .apply(lambda x: 
-                        1 if x=='ACTIVE' else
-                        0 if x=='NOT ACTIVE'
-                        else np.nan
-                    ).astype('float')
+        ac = pd.read_csv(os.path.join(CONFIGPATH, "activity_comments_classified.csv"))
+        comment_dict = {}
+        for k, v in ac.values:
+            for x in k.split(";"):
+                comment_dict[x] = v
+        comment_active = []
+        for c in tqdm(df['activity_comment'].tolist()):
+            c = str(c)
+            if c is None or c == 'nan':
+                comment_active.append(np.nan)
+            else:
+                if c not in comment_dict:
+                    raise Exception(f"Comment {c} not found in the activity comments file. Please check the activity_comments_classified.csv file and update it accordingly.")
+                else:
+                    val = comment_dict[c]
+                    if val == "":
+                        comment_active.append(np.nan)
+                    else:
+                        comment_active.append(int(val))
+        df['comment_active'] = comment_active
         return df
 
     def eliminate_rows(self, df):
         pref = len(df)
         df = df[~df["canonical_smiles"].isna()]
+        df = df[~df["parent_canonical_smiles"].isna()]
         print("removing rows with empty smiles: {}".format(pref-len(df)))
         df['standard_units'] = df['standard_units'].fillna('N/A')    
         # Remove rows where both standard_value and comment_active are null 
@@ -47,11 +94,12 @@ class RawCleaner():
         return df, no_activity_info 
     
     def drop_unwanted_cols(self, df):
-        cols_to_drop = ['doc_id', 'activity_id', 'assay_type',
-       'assay_confidence_score', 'assay_bao_format', 'pchembl_value', 'activity_comment',
-       'target_tax_id', 'protein_accession_class', 'year',
-       'pubmed_id', 'count_activity_rows', 'doc_id_all',
-       'assay_id_all', 'activity_id_all', 'assay_description']
+        cols_to_drop = [
+            'doc_id',
+            'activity_id',
+            'assay_bao_format',
+            'target_tax_id',
+            'assay_description']
         cols_int = list(set(cols_to_drop).intersection(df.columns))
         df = df.drop(columns=cols_int, errors='ignore')
         return df
@@ -62,15 +110,25 @@ class RawCleaner():
             return None
         return Descriptors.MolWt(mol)
 
-    def add_mol_weight(self, df):
-        print("MOL WEIGHT")
-        df["molecular_weight"] = df["canonical_smiles"].apply(self._mol_weight)
-        #if molweight cannot be calculated, drop row
-        smi_not_processed = len(df[df["molecular_weight"].isna()])
-        print(len(df), smi_not_processed)
-        df = df[~df["molecular_weight"].isna()]
-        print(len(df))
-        return df, smi_not_processed
+    def add_mol_weight(self, df, is_parent=False):
+        if not is_parent:
+            print("Molecular weight calculation for base SMILES")
+            df["molecular_weight"] = df["canonical_smiles"].apply(self._mol_weight)
+            #if molweight cannot be calculated, drop row
+            smi_not_processed = len(df[df["molecular_weight"].isna()])
+            print(len(df), smi_not_processed)
+            df = df[~df["molecular_weight"].isna()]
+            print(len(df))
+            return df, smi_not_processed
+        else:
+            print("Molecular weight calculation for base SMILES for parent")
+            df["parent_molecular_weight"] = df["parent_canonical_smiles"].apply(self._mol_weight)
+            #if molweight cannot be calculated, drop row
+            smi_not_processed = len(df[df["parent_molecular_weight"].isna()])
+            print(len(df), smi_not_processed)
+            df = df[~df["parent_molecular_weight"].isna()]
+            print(len(df))
+            return df, smi_not_processed
     
     def activity_cleanup(self, df):
         for i,r in df.iterrows():
@@ -90,10 +148,17 @@ class RawCleaner():
         return df
     
     def run(self, df):
+        print("Getting standard text data")
+        df = self.get_standard_text(df)
+        print("Getting comment data")
         df = self.get_comment(df)
+        print("Eliminating no info rows")
         df, no_activity_info = self.eliminate_rows(df)
+        print("Dropping unwanted columns")
         df = self.drop_unwanted_cols(df)
-        df, smi_not_processed = self.add_mol_weight(df)
+        df, smi_not_processed_0 = self.add_mol_weight(df, is_parent=False)
+        df, smi_not_processed_1 = self.add_mol_weight(df, is_parent=True)
+        smi_not_processed = list(set(smi_not_processed_0 + smi_not_processed_1))
         df = self.activity_cleanup(df)
         return df, no_activity_info, smi_not_processed
 
