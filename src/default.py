@@ -13,11 +13,14 @@ TMPDIR = os.path.join(abspath, "..", "tmp")
 PATHOGENSPATH = os.path.join(CONFIGPATH, "pathogens.csv")
 
 # Parameters for binarization
-MIN_SIZE_ASSAY_TASK = 1000 # Top assays with at least this data size will get a specific task
-MIN_SIZE_PROTEIN_TASK = 250 # Top proteins with at least this data size will get a specific task
-MIN_COUNT_POSITIVE_CASES = 30
-TOP_ASSAYS = 3
-TOP_PROTEINS = 3
+PCHEMBL_CUTOFFS = [5, 6, 7, 8, 9]
+PERCENTAGE_ACTIVITY_CUTOFFS = [50, 75, 90]
+PERCENTILES = [1, 5, 10, 25, 50]
+MIN_SIZE_ASSAY_TASK = 500
+MIN_SIZE_ASSAY_SUBTASK = 99
+MIN_SIZE_ANY_TASK = 99
+MAX_NUM_INDEPENDENT_ASSAYS = 5
+MAX_NUM_ASSAY_SUBTASKS = 3
+MIN_POSITIVES = 10
+MAX_NUM_INDEPENDENT_UNITS = 5
 DATASET_SIZE_LIMIT = 1e6
-ST_TYPES = ["MIC", 'IZ', "IC50", "Inhibition", "Activity"]
-SPLIT_METHOD = 'random'

@@ -5,7 +5,7 @@ import pandas as pd
 abspath = os.path.abspath(__file__)
 sys.path.append(abspath)
 
-from utils import UnitStandardiser, RawCleaner, Binarizer
+from src.src_legacy.utils import UnitStandardiser, RawCleaner, Binarizer
 from src.src_legacy.generate_datasets import OrgDatasets, ProteinDatasets, AllDatasets, BioassayDatasets
 from default import DATAPATH, ST_TYPES
 
