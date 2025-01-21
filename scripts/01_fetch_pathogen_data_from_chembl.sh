@@ -54,3 +54,4 @@ python $SCRIPT_DIR/../src/clean_fetched_pathogen_data.py --pathogen_code $PATHOG
 python $SCRIPT_DIR/../src/binarize_fetched_pathogen_data.py --pathogen_code $PATHOGEN_CODE --output_dir $OUTPUT_DIR
 python $SCRIPT_DIR/../src/datasets_modelability.py --pathogen_code $PATHOGEN_CODE --output_dir $OUTPUT_DIR
 python $SCRIPT_DIR/../src/select_tasks.py --pathogen_code $PATHOGEN_CODE --output_dir $OUTPUT_DIR
+python $SCRIPT_DIR/../src/wrapup_tasks_and_clean_output_folder.py --pathogen_code $PATHOGEN_CODE --output_dir $OUTPUT_DIR
