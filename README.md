@@ -1,6 +1,6 @@
 # Antimicrobial binary ML tasks from ChEMBL
 
-> IMPORTANT: this repository is the old version of [chembl-binary-tasks](https://github.com/ersilia-os/chembl-binary-tasks).
+> IMPORTANT: THIS REPOSITORY IS THE OLD VERSION OF [chembl-antimicrobial-tasks](https://github.com/ersilia-os/chembl-antimicrobial-tasks).
 
 A repository to generate bioassay datasets from ChEMBL ready for downstream AI/ML modelling. This repository is based on the [antimicrobial-ml-tasks](https://github.com/ersilia-os/antimicrobial-ml-tasks) and [chembl-ml-tools](https://github.com/ersilia-os/chembl-ml-tools), now Archived.
 
